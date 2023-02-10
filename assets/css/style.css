@@ -46,7 +46,7 @@ body main .topic-container a {
 }
 body main .topic-content-container .boxes {
   cursor: pointer;
-  padding: 1.5rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.8);
 }
 body main .topic-content-container .boxes:hover {
@@ -80,7 +80,7 @@ body main .box-type-content .box-type {
 body main .topic-container .expand-container {
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 body main .topic-container .expand-icon {
   display: flex;
@@ -94,8 +94,11 @@ body main .topic-container .expand-icon {
   border-radius: 50%;
 }
 body main .desc-container {
-  padding: 0 0 1rem;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem 0.5em;
+  background: rgba(226, 232, 240, 0.5);
+}
+body main .desc-container p {
+  text-indent: 2rem;
 }
 
 footer .footer-container {

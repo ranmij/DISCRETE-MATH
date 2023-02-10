@@ -60,7 +60,7 @@ body main {
     // Box Container
     .topic-content-container .boxes {
         cursor: pointer;
-        padding: 1.5rem;
+        padding: 1rem;
         background: rgb(255, 255, 255, .8);
         
         &:hover {
@@ -105,7 +105,7 @@ body main {
     .topic-container .expand-container {
         display: flex;
         justify-content: center;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
     }
 
     .topic-container .expand-icon {
@@ -122,8 +122,12 @@ body main {
 
     // Website Description
     .desc-container {
-        padding: 0 0 1rem;
-        background: rgb(255, 255, 255, .8);
+        padding: 2rem .5em;
+        background: rgb(226, 232, 240, .5);
+    }
+
+    .desc-container p {
+        text-indent: 2rem;
     }
 }
 // End Main Content Style

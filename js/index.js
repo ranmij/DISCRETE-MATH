@@ -1,82 +1,73 @@
 const topics = [
     {
         title : 'Sequence & Strings',
-        desc : 'Sample Sample',
+        desc : 'A string is just a finite sequence where S is a set of characters. Strings denoted by putting the characters together, for the example 12345. Besides that, strings are the fundamental object of computer science. Everything discrete can be described as a string of characters.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Notes'
     },
     {
         title : 'Equivalence Relation',
-        desc : 'Sample Sample',
+        desc : 'An equivalence relation is a relationship on a set, generally denoted by. “∼”, that is reflexive, symmetric, and transitive for everything in the set.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Notes'
     },
     {
         title : 'Sets',
-        desc : 'Sample Sample',
+        desc : 'A set is the mathematical model for a collection of different things; a set contains elements or members, which can be mathematical objects of any kind: numbers, symbols, points in space, lines, other geometrical shapes, variables, or even other sets.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Notes'
     },
     {
         title : 'Matrices of Relations',
-        desc : 'Sample Sample',
+        desc : 'Sets and relation are interconnected with each other. The relation defines the relation between two given sets. If there are two sets available, then to check if there is any connection between the two sets, we use relations. For example, an empty relation denotes none of the elements in the two sets is same.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Notes'
     },
     {
         title : 'Search Sequence',
-        desc : 'Sample Sample',
+        desc : 'Any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain, either with discrete or continuous values.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Algorithm'
     },
     {
         title : 'Magic Square',
-        desc : 'Sample Sample',
+        desc : 'In recreational mathematics, a square array of numbers, usually positive integers, is called a magic square if the sums of the numbers in each row, each column, and both main diagonals are the same.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Program'
     },
     {
         title : 'Pascal\'s Triangle',
-        desc : 'Sample Sample',
+        desc : 'In mathematics, Pascal\'s triangle is a triangular array of the binomial coefficients that arises in probability theory, combinatorics, and algebra. In much of the Western world, it is named after the French mathematician Blaise Pascal, although other mathematicians studied it centuries before him in India, Persia, China, Germany, and Italy.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Program'
     },
     {
         title : 'Hash Functions',
-        desc : 'Sample Sample',
+        desc : 'A Hash Function is a function that converts a given numeric or alphanumeric key to a small practical integer value. The mapped integer value is used as an index in the hash table. In simple terms, a hash function maps a significant number or string to a small integer that can be used as the index in the hash table.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Program'
     },
     {
         title : 'Quantifiers',
-        desc : 'Sample Sample',
+        desc : 'Quantifier is mainly used to show that for how many elements, a described predicate is true. It also shows that for all possible values or for some value(s) in the universe of discourse, the predicate is true or not.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Notes'
     },
     {
         title : 'Sum & Product Rules',
-        desc : 'Sample Sample',
+        desc : 'In mathematics, summation is the addition of a sequence of any kind of numbers, called addends or summands; the result is their sum or total. Product notation (also called pi notation) indicates repeated multiplication. This notation is very similar to summation notation. The only difference is that while summation notation expresses a pattern of sums (i.e. a sequence of numbers), product notation shows a pattern in products.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Notes'
     },
     {
         title : 'Complexity of Algorithm',
-        desc : 'Sample Sample',
+        desc : 'Algorithmic complexity is concerned about how fast or slow particular algorithm performs. We define complexity as a numerical function T(n) - time versus the input size n. We want to define time taken by an algorithm without depending on the implementation details.',
         link : 'factorial.html',
-        type : 'Algorithm',
-        img : 'assets/img/algorithm.png'
+        type : 'Notes'
     }
 ];
+const topic_type = [ 'Algorithm', 'Program', 'Notes'];
+const topic_imgs = [ 'assets/img/algorithm.png', 'assets/img/program.png', 'assets/img/notebook.png']
 // Truth Table Generator 
 
 
@@ -88,8 +79,15 @@ $(document).ready(function() {
         for(let i = 0; i < 4; i++) {
             if (topics.length >= 1) {    // Check if we are still in bound in the array's length
                 // Creates a box in the topics
+                let img = $('<img>');
+                if (topics[0].type === topic_type[0]) {
+                    img.attr({src: topic_imgs[0], alt: topics[0].type});
+                } else if (topics[0].type === topic_type[1]) {
+                    img.attr({src: topic_imgs[1], alt: topics[0].type});
+                } else {
+                    img.attr({src: topic_imgs[2], alt: topics[0].type});
+                }
                 let link_tag = $('<a></a>').attr('href', topics[0].link);
-                let img = $('<img>').attr({src: topics[0].img, alt: topics[0].type});
                 let title = $('<h2></h2>').text(topics[0].title);
                 let p_desc = $('<p></p>').text(topics[0].desc);
                 let desc_c = $('<div></div>', {class : 'box-desc-content'}).append(title).append(p_desc);
