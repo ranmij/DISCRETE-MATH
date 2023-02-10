@@ -23,7 +23,6 @@ body header .nav-content span {
 }
 
 body main {
-  height: 100%;
   width: 85%;
   margin: 1rem auto;
   padding: 1.5rem 0.8rem;
@@ -93,6 +92,10 @@ body main .topic-container .expand-icon {
   width: 40px;
   background: #FF731D;
   border-radius: 50%;
+}
+body main .desc-container {
+  padding: 0 0 1rem;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 footer .footer-container {

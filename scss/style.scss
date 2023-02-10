@@ -29,18 +29,18 @@ body header .nav-content {
 
 // Begin Main Content Style
 body main {
-    height: 100%;
     width: $center-width;
     margin: 1rem auto;
     padding: 1.5rem .8rem;
 
+    // TOPIC
     .topic-container .topic-title {
         text-transform: uppercase;
-        // text-align: center;
         font-weight: 400;
         font-size: 1.8rem;
     }
 
+    // Topic Container
     .topic-content-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -50,11 +50,14 @@ body main {
         background: rgb(226, 232, 240, .5);
     }
 
+
+    // Link Box Container
     .topic-container a {
         text-decoration: none;
         color: #000;
     }
 
+    // Box Container
     .topic-content-container .boxes {
         cursor: pointer;
         padding: 1.5rem;
@@ -65,12 +68,13 @@ body main {
         }
     }
 
+    // Box Image
     .boxes img {
         margin-bottom: .5rem;
     }
 
+    // Box Description
     .boxes .box-desc-content h2 {
-        // font-weight: 300;
         font-size: 1.2rem;
     }
 
@@ -83,6 +87,7 @@ body main {
         font-size: .8rem;
     }
 
+    // Box Type
     .boxes .box-type-content {
         display: flex;
         justify-content: flex-end;
@@ -96,6 +101,7 @@ body main {
         background: $secondary-light;
     }
 
+    // Expand Icon
     .topic-container .expand-container {
         display: flex;
         justify-content: center;
@@ -112,6 +118,12 @@ body main {
         width: 40px;
         background: $primary-light;
         border-radius: 50%;
+    }
+
+    // Website Description
+    .desc-container {
+        padding: 0 0 1rem;
+        background: rgb(255, 255, 255, .8);
     }
 }
 // End Main Content Style
