@@ -1,3 +1,4 @@
+// collection of topics
 const topics = [
     {
         title : 'Sequence & Strings',
@@ -66,9 +67,15 @@ const topics = [
         type : 'Notes'
     }
 ];
+
+// topic types and images
 const topic_type = [ 'Algorithm', 'Program', 'Notes'];
-const topic_imgs = [ 'assets/img/algorithm.png', 'assets/img/program.png', 'assets/img/notebook.png']
-// Truth Table Generator 
+const topic_imgs = [ 'assets/img/algorithm.png', 'assets/img/program.png', 'assets/img/notebook.png'];
+
+// input operators
+const operators = [ '∧', '∨', '¬'];
+const max_variables = 4;
+
 
 
 $(document).ready(function() {
@@ -102,5 +109,14 @@ $(document).ready(function() {
             }
         }
         console.log(topics.length)
+    });
+
+    $('#generate').click(() => {
+        const pattern = /\w+/g                                      // match all the letters
+        let expression = new Set($('#expr').val().match(pattern));
+        let input_length = expression.length;                       // length of the characters match
+
+        console.log(input_length);
+
     });
 });

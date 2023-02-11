@@ -101,6 +101,11 @@ body main .desc-container p {
   text-indent: 2rem;
 }
 
+footer {
+  position: relative;
+  bottom: -1rem;
+}
+
 footer .footer-container {
   width: 85%;
   margin: 0 auto;
@@ -133,8 +138,8 @@ footer .footer-container {
 
 main .topic-description {
   background: rgba(226, 232, 240, 0.5);
-  padding: 1rem 0;
   padding: 0.5rem;
+  margin: 0 0 1rem;
 }
 main .topic-description p {
   text-indent: 1.5rem;
@@ -145,7 +150,7 @@ main .topic-description h1 {
 }
 
 main .program-container {
-  margin: 1rem 0 0;
+  margin: 1rem 0;
   background: rgba(226, 232, 240, 0.5);
   padding: 0.5rem;
 }
@@ -153,6 +158,7 @@ main .program-container .input-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 0 1rem;
 }
 main .program-container .input-container input {
   padding: 0.29rem;
@@ -170,4 +176,9 @@ main .program-container .input-container button {
   color: #fff;
   border: 1px solid #000;
   border-left: none;
+}
+
+main .code-section {
+  padding: 0.5rem;
+  background: rgba(226, 232, 240, 0.5);
 }
