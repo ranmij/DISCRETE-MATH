@@ -18,6 +18,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" href="assets/img/favicon.ico?v=1" type="image/x-icon">
         <title>Truth Table</title>
     </head>
     <body>
@@ -38,13 +39,13 @@
                     <input type="text" value="A ∧ B" id="expr">
                     <button id="generate">Generate</button>
                 </div>
-                <div class="table-container">
+                <div class="table-container" id="table-container">
                     <table class="table table-bordered container-fluid text-center">
                         <thead>
                             <tr>
-                                <th scope="col">A</th>
-                                <th scope="col">B</th>
-                                <th scope="col">A ∧ B</th>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>A ∧ B</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,7 +74,260 @@
                 </div>
             </div>
             <div class="code-section">
-                 
+                <div class="code-desc">
+                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i></span>Here's how to implement basic truth table program in other programming languages.
+                </div>
+                <ul id="language-tab">
+                    <li class="active">JavaScript</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>PHP</li>
+                </ul>
+                
+                <div id="code-tab">
+                    <div class="code-content display-code">
+                        <code>
+<pre>
+<span class="line">1</span>     const input_a = [0, 1, 0, 1];
+<span class="line">2</span>     const input_b = [1, 0, 0, 1];
+<span class="line">3</span>     
+<span class="line">4</span>     let choice = Number(prompt("1. Conjunction\n2. Disjunction\n3. Negation"));
+<span class="line">5</span>     if (choice === 1 || choice === 2) {
+<span class="line">6</span>         if (choice === 1)
+<span class="line">7</span>             console.log('A\t\tB\t\tA ∧ B');
+<span class="line">8</span>         else
+<span class="line">9</span>             console.log('A\t\tB\t\tA ∨ B');
+<span class="line">10</span>        for(let index = 0; index < input_a.length; index++) {
+<span class="line">11</span>            let and = input_a[index] && input_b[index];
+<span class="line">12</span>            let or = input_a[index] || input_b[index];
+<span class="line">13</span>            
+<span class="line">14</span>            if (choice == 1)
+<span class="line">15</span>                console.log(`${input_a[index]? 'True': 'False'}\t${input_b[index]? 'True': 'False'}\t${and ? 'True': 'False'}`);
+<span class="line">16</span>            else {
+<span class="line">17</span>                console.log(`${input_a[index]? 'True': 'False'}\t${input_b[index]? 'True': 'False'}\t${or ? 'True': 'False'}`);
+<span class="line">18</span>        }
+<span class="line">19</span>    } else {
+<span class="line">20</span>        console.log('A\t\t\'A');
+<span class="line">21</span>        for (let index = 0; index < 2; index++)
+<span class="line">22</span>            console.log(`${input_a[index]? 'True': 'False'}\t${!input_a[index]? 'True' : 'False'}`);
+<span class="line">23</span>    }
+</pre>
+                            </code>
+                            <div class="run-container">
+                                <a class="bg-primary" href="https://onlinegdb.com/YPN9ODnb7"><i class="fa-solid fa-play"></i></a>
+                            </div>
+                        </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>     input_a = [0, 1, 0, 1]
+<span class="line">2</span>     input_b = [1, 0, 0, 1]
+<span class="line">3</span>     
+<span class="line">4</span>     choice = int(input("1. Conjunction\n2. Disjunction\n3. Negation\n>> "))
+<span class="line">5</span>     if choice == 1 or choice == 2:
+<span class="line">6</span>         if choice == 1:
+<span class="line">7</span>             print('A\tB\tA ∧ B')
+<span class="line">8</span>         else:
+<span class="line">9</span>             print('A\tB\tA ∨ B')
+<span class="line">10</span>        for index in range(0, len(input_a)):
+<span class="line">11</span>            and_res = input_a[index] and input_b[index]
+<span class="line">12</span>            or_res = input_a[index] or input_b[index]
+<span class="line">13</span>            
+<span class="line">14</span>            if choice == 1:
+<span class="line">15</span>                print(f"{'True' if input_a[index] else 'False'}\t{'True' if input_b[index] else 'False'}\t{'True' if and_res else 'False'}")
+<span class="line">16</span>            else:
+<span class="line">17</span>                print(f"{'True' if input_a[index] else 'False'}\t{'True' if input_b[index] else 'False'}\t{'True' if or_res else 'False'}")
+<span class="line">18</span>
+<span class="line">19</span>    else:
+<span class="line">20</span>        print('A\t\'A')
+<span class="line">21</span>        for index in range(0, 2):
+<span class="line">22</span>            print(f"{'True' if input_a[index] else 'False'}\t{'True' if not input_a[index] else 'False'}")
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/9q1OC7xHZ"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>     import java.util.Scanner;
+<span class="line">2</span>
+<span class="line">3</span>     public class Main
+<span class="line">4</span>     {
+<span class="line">5</span>         public static void main(String[] args) {
+<span class="line">6</span>             Scanner input = new Scanner(System.in);
+<span class="line">8</span>             boolean input_a[] = {false, true, false, true};
+<span class="line">9</span>             boolean input_b[] = {true, false, false, true};
+<span class="line">10</span>		
+<span class="line">11</span>            System.out.print("1. Conjunction\n2. Disjunction\n3. Negation\n>> ");
+<span class="line">12</span>            int choice = input.nextInt();
+<span class="line">13</span>
+<span class="line">14</span>            if(choice == 1 || choice == 2) {
+<span class="line">15</span>                 if (choice == 1)
+<span class="line">16</span>                    System.out.println("A\tB\tA ∧ B");
+<span class="line">17</span>                 else 
+<span class="line">18</span>                    System.out.println("A\tB\tA ∨ B");
+<span class="line">19</span>    
+<span class="line">20</span>                for(int index = 0; index < input_a.length; index++) {
+<span class="line">21</span>                     boolean and = input_a[index] && input_b[index];
+<span class="line">22</span>                     boolean or  = input_a[index] || input_b[index];
+<span class="line">23</span>
+<span class="line">24</span>                     if (choice == 1)
+<span class="line">25</span>                         System.out.printf("%s\t%s\t%s\n", input_a[index] ? "True" : "False", input_b[index] ? "True" : "False", and ? "True" : "False");
+<span class="line">26</span>                     else
+<span class="line">27</span>                         System.out.printf("%s\t%s\t%s\n", input_a[index] ? "True" : "False", input_b[index] ? "True" : "False", or ? "True" : "False");
+<span class="line">28</span>                }
+<span class="line">29</span>            } else {
+<span class="line">30</span>                System.out.println("A\t'A");
+<span class="line">31</span>                for(int index = 0; index < 2; index++)
+<span class="line">32</span>                    System.out.printf("%s\t%s\n", input_a[index] ? "True" : "False", !input_a[index] ? "True" : "False");
+<span class="line">33</span>            }
+<span class="line">34</span>        }
+<span class="line">35</span>    }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/FbOF-ibgX"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>     #include &lt;stdio.h&gt;
+<span class="line">2</span> 
+<span class="line">3</span>     int main()
+<span class="line">4</span>     {
+<span class="line">5</span>         int choice, i;
+<span class="line">6</span>         int input_a[] = {0, 1, 0, 1};
+<span class="line">7</span>         int input_b[] = {1, 0, 0, 1};
+<span class="line">8</span>         
+<span class="line">9</span>         printf("1. Conjunction\n2. Disjunction\n3. Negation\n>> ");
+<span class="line">10</span>        scanf(" %d", &choice);
+<span class="line">11</span>             
+<span class="line">12</span>        if(choice == 1 || choice == 2) {
+<span class="line">13</span>            if (choice == 1)
+<span class="line">14</span>                puts("A\tB\tA ∧ B");
+<span class="line">15</span>            else 
+<span class="line">16</span>                puts("A\tB\tA ∨ B");
+<span class="line">17</span>                
+<span class="line">18</span>            for(i = 0; i < sizeof(input_a)/sizeof(int); i++) {
+<span class="line">19</span>                int and_res = input_a[i] && input_b[i];
+<span class="line">20</span>                int or_res  = input_a[i] && input_b[i];
+<span class="line">21</span>                    
+<span class="line">22</span>                if (choice == 1)
+<span class="line">23</span>                    printf("%s\t%s\t%s\n", input_a[i]? "True" : "False", input_b[i] ? "True" : "False", and_res ? "True" : "False");
+<span class="line">24</span>                else
+<span class="line">25</span>                    printf("%s\t%s\t%s\n", input_a[i]? "True" : "False", input_b[i] ? "True" : "False", or_res ? "True" : "False");
+<span class="line">26</span>            }
+<span class="line">27</span>        } else {
+<span class="line">28</span>            puts("A\t'A");
+<span class="line">29</span>            for(i = 0; i < 2; i++)
+<span class="line">30</span>                printf("%s\t%s\n", input_a[i]? "True" : "False", !input_a[i] ? "True" : "False");
+<span class="line">31</span>        }
+<span class="line">32</span>        return 0;
+<span class="line">33</span>    }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/yRfvf07rW"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;iostream>
+<span class="line">2</span>    #include &lt;array>
+<span class="line">3</span>    using namespace std;
+<span class="line">4</span>
+<span class="line">5</span>    int main()
+<span class="line">6</span>    {
+<span class="line">7</span>        int choice, i;
+<span class="line">8</span>        array&lt;int, 4> input_a = {0, 1, 0, 1};
+<span class="line">9</span>        array&lt;int, 4> input_b = {1, 0, 0, 1};
+<span class="line">10</span>        
+<span class="line">11</span>       cout &lt;&lt; "1. Conjunction\n2. Disjunction\n3. Negation\n>> ";
+<span class="line">12</span>       cin >> choice ;
+<span class="line">13</span>           
+<span class="line">14</span>       if(choice == 1 || choice == 2) {
+<span class="line">15</span>           if (choice == 1)
+<span class="line">16</span>               cout &lt;&lt; "A\tB\tA ∧ B" &lt;&lt; endl;
+<span class="line">17</span>           else 
+<span class="line">18</span>               cout &lt;&lt; "A\tB\tA ∨ B" &lt;&lt; endl;
+<span class="line">19</span>               
+<span class="line">20</span>           for(i = 0; i < input_a.size(); i++) {
+<span class="line">21</span>               bool and_res = input_a[i] && input_b[i];
+<span class="line">22</span>               bool or_res  = input_a[i] && input_b[i];
+<span class="line">23</span>                
+<span class="line">24</span>               if (choice == 1)
+<span class="line">25</span>                   cout &lt;&lt; (input_a[i]? "True" : "False") &lt;&lt; "\t" &lt;&lt; (input_b[i] ? "True" : "False") &lt;&lt; "\t" &lt;&lt; (and_res ? "True" : "False") &lt;&lt; endl;
+<span class="line">26</span>               else
+<span class="line">27</span>                   cout << (input_a[i]? "True" : "False") &lt;&lt; "\t" &lt;&lt; (input_b[i] ? "True" : "False") &lt;&lt; "\t" &lt;&lt; (or_res ? "True" : "False") &lt;&lt; endl;
+<span class="line">28</span>           }
+<span class="line">29</span>       } else {
+<span class="line">30</span>           cout &lt;&lt; "A\t'A" &lt;&lt; endl;
+<span class="line">31</span>           for(i = 0; i < 2; i++)
+<span class="line">32</span>               cout &lt;&lt; (input_a[i]? "True" : "False") &lt;&lt; "\t" &lt;&lt; (!input_a[i] ? "True" : "False") &lt;&lt; endl;
+<span class="line">33</span>       }
+<span class="line">34</span>       return 0;
+<span class="line">35</span>   }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/4ve63Sf11"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+    &lt;?php
+        $input_a = array(0, 1, 0, 1);
+        $input_b = array(1, 0, 0, 1);
+        
+        echo "1. Conjunction\n2. Disjunction\n3. Negation\n>> ";
+        $choice = (int) readline();
+        
+        if ($choice === 1 || $choice === 2):
+            if ($choice === 1):
+                echo "A\tB\tA ∧ B\n";
+            else:
+                echo "A\tB\tA ∨ B\n";
+            endif;
+            
+            for($i = 0; $i < count($input_a); $i++):
+                $and_res = $input_a[$i] && $input_b[$i];
+                $or_res  = $input_a[$i] || $input_b[$i];
+                
+                if ($choice === 1):
+                    echo ($input_a[$i] ? 'True' : 'False') . "\t" . ($input_b[$i] ? 'True' : 'False') . "\t" . ($and_res ? 'True' : "False") . PHP_EOL;
+                else:
+                    echo ($input_a[$i] ? 'True' : 'False') . "\t" . ($input_b[$i] ? 'True' : 'False') . "\t" . ($or_res ? 'True' : "False") . PHP_EOL;
+                endif;
+            endfor;
+        else:
+            echo "A\t'A\n";
+            for($i = 0; $i < 2; $i++):
+                echo ($input_a[$i] ? 'True' : 'False') . "\t" . (!$input_a[$i] ? 'True' : 'False') . PHP_EOL;
+            endfor;
+        endif;
+    ?>
+</pre> 
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/ujVSLFYtQ"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-output">
+                    <ul>
+                        <li class="active">Output</li>
+                    </ul>
+                    <div class="output-content">
+                        <img src="assets/img/truth-table-output.png" alt="truth-table-output">
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="bg-light py-5">
@@ -101,5 +355,12 @@
     </body>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="js/ast.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/scanner.js"></script>
+    <script src="js/truth-table.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/tab.js"></script>
 </html>

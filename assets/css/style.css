@@ -178,7 +178,77 @@ main .program-container .input-container button {
   border-left: none;
 }
 
-main .code-section {
+main .code-section .code-desc {
   padding: 0.5rem;
   background: rgba(226, 232, 240, 0.5);
+  border: 1px solid #000;
+  margin: 2rem 0 1rem;
+}
+main .code-section .code-desc .b-icon {
+  margin: 0.5rem;
+}
+main .code-section ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main .code-section ul li {
+  text-align: center;
+  width: 6em;
+  padding: 0.5rem;
+  border-bottom: none;
+  background: rgba(226, 232, 240, 0.5);
+}
+main .code-section ul li:hover {
+  background: #007BFF;
+  color: #fff;
+}
+main .code-section ul .active {
+  background: #007BFF;
+  color: #fff;
+}
+main .code-section .code-content {
+  background-color: #202124;
+  padding: 0.5rem;
+  margin: 0 0 1rem;
+}
+main .code-section .code-content code {
+  color: #fff;
+}
+main .code-section .code-content .line {
+  color: #c5c5c5;
+}
+main .code-section .code-content .run-container {
+  position: relative;
+}
+main .code-section .code-content .run-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem;
+  bottom: 1rem;
+  right: 2.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  font-size: 1.5rem;
+}
+main .code-section .output-content {
+  padding: 0.5rem;
+  background: #202124;
+}
+
+main .hidden-code {
+  display: none;
+}
+
+main .display-code {
+  display: block;
 }

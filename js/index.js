@@ -1,3 +1,4 @@
+
 // collection of topics
 const topics = [
     {
@@ -72,51 +73,69 @@ const topics = [
 const topic_type = [ 'Algorithm', 'Program', 'Notes'];
 const topic_imgs = [ 'assets/img/algorithm.png', 'assets/img/program.png', 'assets/img/notebook.png'];
 
-// input operators
-const operators = [ '∧', '∨', '¬'];
-const max_variables = 4;
-
-
 
 $(document).ready(function() {
 
-    // Expand Click Event
+    /**
+     * Click event to expand the topics in the homepage
+     */
     $('#expand-topics').click(()=> {
-        let root_tag = $('.topic-content-container');
+        let root_node = $('.topic-content-container');
         for(let i = 0; i < 4; i++) {
+            
             if (topics.length >= 1) {    // Check if we are still in bound in the array's length
-                // Creates a box in the topics
-                let img = $('<img>');
-                if (topics[0].type === topic_type[0]) {
-                    img.attr({src: topic_imgs[0], alt: topics[0].type});
-                } else if (topics[0].type === topic_type[1]) {
-                    img.attr({src: topic_imgs[1], alt: topics[0].type});
-                } else {
-                    img.attr({src: topic_imgs[2], alt: topics[0].type});
-                }
-                let link_tag = $('<a></a>').attr('href', topics[0].link);
-                let title = $('<h2></h2>').text(topics[0].title);
-                let p_desc = $('<p></p>').text(topics[0].desc);
-                let desc_c = $('<div></div>', {class : 'box-desc-content'}).append(title).append(p_desc);
-                let type = $('<div></div>', {class: 'box-type', text: topics[0].type})
-                let type_c = $('<div></div>', {class : 'box-type-content'}).append(type);
-                let container = $('<div></div>', {class: 'boxes'});
+                // Creates a box in the topics_d
+                let link_node = createBoxLinkNode(topics[0].link);
+                let container_node = $('<div></div>', {class: 'boxes'});
 
-                link_tag.append(container);
-                container.append(img).append(desc_c).append(type_c);
-                root_tag.append(link_tag);
+                container_node.append(boxImageType(topics[0].type));
+                container_node.append(createBoxContentNode(topics[0].title, topics[0].desc));
+                container_node.append(createBoxTypeNode(topics[0].type))
+                link_node.append(container_node);
+                root_node.append(link_node);
                 topics.shift();   
             }
         }
-        console.log(topics.length)
     });
 
+
+    // FOR TRUTH TABLE PAGE
+    
+    /**
+     * Click event for truth table generator
+     */
     $('#generate').click(() => {
-        const pattern = /\w+/g                                      // match all the letters
-        let expression = new Set($('#expr').val().match(pattern));
-        let input_length = expression.length;                       // length of the characters match
-
-        console.log(input_length);
-
+        goLove();       // para sa'yo ito hahahaha
     });
-});
+
+    // CLICK EVENTS FOR TAB PAGES
+
+    /**
+     * Click events for tabs
+     */
+    let tabs = $('#language-tab').children();
+    let code_panel = $('#code-tab').children();
+    for(let index = 0; index < tabs.length; index++) {
+        $(tabs[index]).click(() => {
+            // set the active tab to inactive
+            for(let i = 0; i < tabs.length; i++) {
+                let current_tab = new String($(tabs[i]).attr('class'));
+                if (current_tab.includes('active'))
+                    $(tabs[i]).removeClass('active');
+            }
+
+            // hide the displayed panel
+            for(let i = 0; i < code_panel.length; i++) {
+                let current_panel = new String($(code_panel[i]).attr('class'));
+                if(current_panel.includes('display-code')) {
+                    $(code_panel[i]).removeClass('display-code');
+                    $(code_panel[i]).addClass('hidden-code');
+                }
+            }
+            
+            // finally set the current tab to active
+            $(tabs[index]).addClass('active');
+            $(code_panel[index]).addClass('display-code');
+        });
+    }
+}); 
