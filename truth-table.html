@@ -282,37 +282,37 @@
                     <div class="code-content hidden-code">
                         <code>
 <pre>
-    &lt;?php
-        $input_a = array(0, 1, 0, 1);
-        $input_b = array(1, 0, 0, 1);
-        
-        echo "1. Conjunction\n2. Disjunction\n3. Negation\n>> ";
-        $choice = (int) readline();
-        
-        if ($choice === 1 || $choice === 2):
-            if ($choice === 1):
-                echo "A\tB\tA ∧ B\n";
-            else:
-                echo "A\tB\tA ∨ B\n";
-            endif;
-            
-            for($i = 0; $i < count($input_a); $i++):
-                $and_res = $input_a[$i] && $input_b[$i];
-                $or_res  = $input_a[$i] || $input_b[$i];
-                
-                if ($choice === 1):
-                    echo ($input_a[$i] ? 'True' : 'False') . "\t" . ($input_b[$i] ? 'True' : 'False') . "\t" . ($and_res ? 'True' : "False") . PHP_EOL;
-                else:
-                    echo ($input_a[$i] ? 'True' : 'False') . "\t" . ($input_b[$i] ? 'True' : 'False') . "\t" . ($or_res ? 'True' : "False") . PHP_EOL;
-                endif;
-            endfor;
-        else:
-            echo "A\t'A\n";
-            for($i = 0; $i < 2; $i++):
-                echo ($input_a[$i] ? 'True' : 'False') . "\t" . (!$input_a[$i] ? 'True' : 'False') . PHP_EOL;
-            endfor;
-        endif;
-    ?>
+<span class="line">1</span>    &lt;?php
+<span class="line">2</span>        $input_a = array(0, 1, 0, 1);
+<span class="line">3</span>        $input_b = array(1, 0, 0, 1);
+<span class="line">4</span>        
+<span class="line">5</span>        echo "1. Conjunction\n2. Disjunction\n3. Negation\n>> ";
+<span class="line">6</span>        $choice = (int) readline();
+<span class="line">7</span>        
+<span class="line">8</span>        if ($choice === 1 || $choice === 2):
+<span class="line">9</span>            if ($choice === 1):
+<span class="line">10</span>               echo "A\tB\tA ∧ B\n";
+<span class="line">11</span>           else:
+<span class="line">12</span>               echo "A\tB\tA ∨ B\n";
+<span class="line">13</span>           endif;
+<span class="line">14</span>            
+<span class="line">15</span>           for($i = 0; $i < count($input_a); $i++):
+<span class="line">16</span>               $and_res = $input_a[$i] && $input_b[$i];
+<span class="line">17</span>               $or_res  = $input_a[$i] || $input_b[$i];
+<span class="line">18</span>               
+<span class="line">19</span>               if ($choice === 1):
+<span class="line">20</span>                   echo ($input_a[$i] ? 'True' : 'False') . "\t" . ($input_b[$i] ? 'True' : 'False') . "\t" . ($and_res ? 'True' : "False") . PHP_EOL;
+<span class="line">21</span>               else:
+<span class="line">22</span>                   echo ($input_a[$i] ? 'True' : 'False') . "\t" . ($input_b[$i] ? 'True' : 'False') . "\t" . ($or_res ? 'True' : "False") . PHP_EOL;
+<span class="line">23</span>               endif;
+<span class="line">24</span>           endfor;
+<span class="line">25</span>       else:
+<span class="line">26</span>           echo "A\t'A\n";
+<span class="line">27</span>           for($i = 0; $i < 2; $i++):
+<span class="line">28</span>               echo ($input_a[$i] ? 'True' : 'False') . "\t" . (!$input_a[$i] ? 'True' : 'False') . PHP_EOL;
+<span class="line">29</span>           endfor;
+<span class="line">30</span>       endif;
+<span class="line">31</span>   ?>
 </pre> 
                         </code>
                         <div class="run-container">
@@ -362,5 +362,4 @@
     <script src="js/scanner.js"></script>
     <script src="js/truth-table.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/tab.js"></script>
 </html>

@@ -34,9 +34,171 @@
                 <h1 class="topic-title">Recursive</h1>
                 <p>— A recursive algorithm is an algorithm which calls itself with "smaller (or simpler)" input values, and which obtains the result for the current input by applying simple operations to the returned value for the smaller (or simpler) input.</p>
             </div>
-            <div class="program-container">
+            <!-- <div class="program-container">
                 
-            </div>
+            </div> -->
+            <div class="code-section">
+                <div class="code-desc">
+                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i></span>Here's how to implement recursive program in other programming languages.
+                </div>
+                <ul id="language-tab">
+                    <li class="active">JavaScript</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>PHP</li>
+                </ul>
+                
+                <div id="code-tab">
+                    <div class="code-content display-code">
+                        <code>
+<pre>
+<span class="line">1</span>    function factorial(num) {
+<span class="line">2</span>        if (num === 1)
+<span class="line">3</span>            return 1;
+<span class="line">4</span>        else
+<span class="line">5</span>            // repeatedly call the function itself
+<span class="line">6</span>            return num * factorial(num - 1);
+<span class="line">7</span>    }
+<span class="line">8</span>    
+<span class="line">9</span>    let num = Number(prompt("Enter a number: "));
+<span class="line">10</span>    
+<span class="line">11</span>   console.log(`The factorial of ${num} is ${factorial(num)}.`);
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/30nl2NkGQ"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    def factorial(num) -> int:
+<span class="line">2</span>        if num == 1:
+<span class="line">3</span>            return 1;
+<span class="line">4</span>        else:
+<span class="line">5</span>            # repeatedly call the function itself.
+<span class="line">6</span>            return num * factorial(num -1)
+<span class="line">7</span>
+<span class="line">8</span>    num = int(input("Enter a number: "))
+<span class="line">9</span>    
+<span class="line">10</span>   print(f"The factorial of a {num} is {factorial(num)}.")
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/mCDnDVYB3"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    import java.util.Scanner;
+<span class="line">2</span>
+<span class="line">3</span>    public class Main
+<span class="line">4</span>    {
+<span class="line">5</span>        public static int factorial(int num) {
+<span class="line">6</span>            if (num == 1)
+<span class="line">7</span>                return 1;
+<span class="line">8</span>            else
+<span class="line">9</span>                return num * factorial(num -1);
+<span class="line">10</span>       }
+<span class="line">11</span>       public static void main(String[] args) {
+<span class="line">12</span>           Scanner input = new Scanner(System.in);
+<span class="line">13</span>            
+<span class="line">14</span>           System.out.print("Enter a number: ");
+<span class="line">15</span>           int num = input.nextInt();
+<span class="line">16</span>           
+<span class="line">17</span>           System.out.printf("The factorial of %d is %d.\n", num, factorial(num));
+<span class="line">18</span>       }
+<span class="line">19</span>    }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/_5sug6OULB"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;stdio.h>
+<span class="line">2</span>
+<span class="line">3</span>    int factorial(int num) {
+<span class="line">4</span>        if (num == 1)  return 1;
+<span class="line">5</span>        else return num * factorial(num - 1);
+<span class="line">6</span>    }
+<span class="line">7</span>        
+<span class="line">8</span>    int main()
+<span class="line">9</span>    {
+<span class="line">10</span>       int num;
+<span class="line">11</span>       printf("Enter a number: ");
+<span class="line">12</span>       scanf(" %d", &num);
+<span class="line">13</span>       
+<span class="line">14</span>       printf("The factorial of %d is %d\n", num, factorial(num));
+<span class="line">15</span>       return 0;
+<span class="line">16</span>   }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/9RzuYeBJp"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;iostream>
+<span class="line">2</span>    using namespace std;
+<span class="line">3</span>    
+<span class="line">4</span>    int factorial(int num) {
+<span class="line">5</span>        if (num == 1)  return 1;
+<span class="line">6</span>        else return num * factorial(num - 1);
+<span class="line">7</span>    }
+<span class="line">8</span>
+<span class="line">9</span>    int main()
+<span class="line">10</span>   {
+<span class="line">11</span>       int num;
+<span class="line">12</span>       cout << "Enter a number: ";
+<span class="line">13</span>       cin >> num ;
+<span class="line">14</span>   
+<span class="line">15</span>       cout << "The factorial of " << num << "is " << factorial(num) << endl;
+<span class="line">16</span>       return 0;
+<span class="line">17</span>   }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/XMrMCev0a"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    &lt;?php
+<span class="line">2</span>        function factorial($num) {
+<span class="line">3</span>            if($num === 1):
+<span class="line">4</span>                return 1;
+<span class="line">5</span>            else:
+<span class="line">6</span>                return $num * factorial($num - 1);
+<span class="line">7</span>            endif;
+<span class="line">8</span>        }
+<span class="line">9</span>        
+<span class="line">10</span>       $num = readline("Enter a number: ");
+<span class="line">11</span>       echo "The factorial of $num is " . factorial($num) . PHP_EOL;
+<span class="line">12</span>   ?>
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/MKEFK1M_ND"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-output">
+                    <ul>
+                        <li class="active">Output</li>
+                    </ul>
+                    <div class="output-content">
+                        <img src="assets/img/factorial-output.png" alt="truth-table-output">
+                    </div>
+                </div>
         </main>
         <footer class="bg-light py-5">
             <div class="footer-container">
@@ -62,4 +224,5 @@
         </footer>
     </body>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </html>
