@@ -177,6 +177,9 @@ main .program-container .input-container button {
   border: 1px solid #000;
   border-left: none;
 }
+main .program-container .algo-img {
+  width: 100%;
+}
 
 main .code-section .code-desc {
   padding: 0.5rem;
@@ -242,7 +245,7 @@ main .code-section .code-content .run-container a {
 }
 main .code-section .output-content {
   padding: 0.5rem;
-  background: #202124;
+  background: #000;
 }
 
 main .hidden-code {

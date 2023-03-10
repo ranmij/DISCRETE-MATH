@@ -28,7 +28,7 @@ const topics = [
     {
         title : 'Search Sequence',
         desc : 'Any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain, either with discrete or continuous values.',
-        link : 'search-sequence.html',
+        link : 'search-algorithm.html',
         type : 'Algorithm'
     },
     {

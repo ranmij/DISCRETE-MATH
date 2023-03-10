@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Website for discrete structures">
+        <meta name="keywords" content="Discrete, Math, Discrete Structures">
+        <meta name="author" content="Our Group">
+        <meta property="og:title" content="Discrete Mathematics"/>
+        <meta property="og:image" content="catto.png"/>
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:description" content="Discover a new way of learning."/>
+        <meta property="og:url" content="#"/>
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <meta property="og:type" content='website'/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" href="assets/img/favicon.ico?v=1" type="image/x-icon">
+        <title>Search Sequence</title>
+    </head>
+    <body>
+        <header class="head-container">
+            <nav class="navbar bg-body-tertiary nav-container">
+                <div class="container nav-content">
+                <a class="navbar-brand" href="#">DISCRETE <span>MATHEMATICS</span></a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="topic-description">
+                <h1 class="topic-title">Search Algorithm</h1>
+                <p>— In computer science, a search algorithm is an algorithm designed to solve a search problem. Search algorithms work to retrieve information stored within particular data structure, or calculated in the search space of a problem domain, with either discrete or continuous values.</p>
+            </div>
+            <!-- <div class="program-container">
+                
+            </div> -->
+            <div class="code-section">
+                <div class="code-desc">
+                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i></span>Here's how to implement a simple search program in other programming languages.
+                </div>
+                <ul id="language-tab">
+                    <li class="active">JavaScript</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>PHP</li>
+                </ul>
+                
+                <div id="code-tab">
+                    <div class="code-content display-code">
+                        <code>
+<pre>
+<span class="line">1</span>    let collections = [1, 4, 0, 9, 5];
+<span class="line">2</span>    let target = Number(prompt("Find: "));
+<span class="line">3</span>
+<span class="line">4</span>    for(let i = 0; i < collections.length; i++) {
+<span class="line">5</span>        if(target === collections[i]) console.log("found at index: " + (i+1));
+<span class="line">6</span>    }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/3IPOd6Bxl"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    from random import randint
+<span class="line">2</span>
+<span class="line">3</span>    collections = [randint(1, 100) for _ in range(100)]
+<span class="line">4</span>    target = int(input("Find: "))
+<span class="line">5</span>    
+<span class="line">6</span>    for i in range(len(collections)):
+<span class="line">7</span>        if collections[i] == target:
+<span class="line">8</span>            print("found at index: ", i+1)
+<span class="line">9</span>            break
+<span class="line">10</span>   else:
+<span class="line">11</span>       print(f"The array does not contain {target}.")
+<span class="line">12</span>       print(collections)
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/gZ0uXiz_u"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    import java.util.Scanner;
+<span class="line">2</span>    public class Main
+<span class="line">3</span>    {
+<span class="line">4</span>        public static void main(String[] args) {
+<span class="line">5</span>            Scanner input = new Scanner(System.in);
+<span class="line">6</span>            int collections[] = {1, 4, 0, 9, 5};
+<span class="line">7</span>            System.out.print("Find: ");
+<span class="line">8</span>            int target = input.nextInt();
+<span class="line">9</span>            
+<span class="line">10</span>           for(int i = 0; i < collections.length; i++) {
+<span class="line">11</span>               if(collections[i] == target) System.out.println("Found at index: " + (i + 1));
+<span class="line">12</span>           }
+<span class="line">13</span>           
+<span class="line">14</span>       }
+<span class="line">15</span>   }   
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/jCic8KS27"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;stdio.h>
+<span class="line">2</span>
+<span class="line">3</span>    int main()
+<span class="line">4</span>    {
+<span class="line">5</span>        int target, i;
+<span class="line">6</span>        int collections[] = {1, 4, 0, 9, 5};
+<span class="line">7</span>        
+<span class="line">8</span>        printf("Find: ");
+<span class="line">9</span>        scanf(" %d", &target);
+<span class="line">10</span>            
+<span class="line">11</span>       for(i = 0; i < sizeof(collections) / sizeof(int); i++)
+<span class="line">12</span>           if (collections[i] == target) printf("Found at index: %d \n", i+1);
+<span class="line">13</span>           return 0;
+<span class="line">14</span>   }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/IQoDuwjhv5"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;iostream>
+<span class="line">2</span>    #include &lt;array>
+<span class="line">3</span>    using namespace std;
+<span class="line">4</span>    
+<span class="line">5</span>    int main()
+<span class="line">6</span>    {
+<span class="line">7</span>        int target, i;
+<span class="line">8</span>       array&lt;int, 5> collections = {1, 4, 0, 9, 5};
+<span class="line">9</span>       
+<span class="line">10</span>       cout << "Find: ";
+<span class="line">11</span>       cin >> target;
+<span class="line">12</span>        
+<span class="line">13</span>       for(i = 0; i < collections.size(); i++)
+<span class="line">14</span>           if (collections[i] == target) cout << "Found at index: " << i + 1 << endl;
+<span class="line">15</span>       return 0;
+<span class="line">16</span>   }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/YKQiZJx2i"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    &lt;?php
+<span class="line">2</span>        $collections = [1, 4, 0, 9, 5];
+<span class="line">3</span>        $target = (int) readline("Find: ");
+<span class="line">4</span>
+<span class="line">5</span>        for($i = 0; $i < count($collections); $i++):
+<span class="line">6</span>            if ($collections[$i] === $target) echo "Fount at index: ", $i+1;
+<span class="line">7</span>        endfor;
+<span class="line">8</span>    ?>
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/IjyoBIonq"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-output">
+                    <ul>
+                        <li class="active">Output</li>
+                    </ul>
+                    <div class="output-content">
+                        <img src="assets/img/search-a.png" alt="search-algorithm-output">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-light py-5">
+            <div class="footer-container">
+                <div class="bottomf-container">
+                    <hr/>
+                    <div class="b-c">
+                        <span>© 2023 Copyright: <a href="#" style="text-decoration:none;">Discrete Mathematics</a></span>
+                        <section>
+                            <a class="btn btn-outline-dark" href="#!" role="button">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                    
+                            <a class="btn btn-outline-dark" href="#!" role="button">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a class="btn btn-outline-dark" href="#!" role="button">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</html>

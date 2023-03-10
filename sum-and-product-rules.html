@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="shortcut icon" href="assets/img/favicon.ico?v=1" type="image/x-icon">
-        <title>Sum and Product</title>
+        <title>Sum and Product Rules</title>
     </head>
     <body>
         <header class="head-container">
@@ -31,18 +31,18 @@
         </header>
         <main>
             <div class="topic-description">
-                <h1 class="topic-title">Euclidean Algorithm</h1>
-                <p>— In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. The factorial of n also equals the product of n with the next smaller factorial: For example, The value of 0! is 1, according to the convention for an empty product.</p>
+                <h1 class="topic-title">Sum and Product Rules</h1>
+                <p>— The symbol Σ (sigma) is generally used to denote a sum of multiple terms. This symbol is generally accompanied by an index that varies to encompass all terms that must be considered in the sum. <br></p>
+                <p>— The Pi symbol, , is a capital letter in the Greek alphabet call “Pi”, and corresponds to “P” in our alphabet. It is used in mathematics to represent the product (think of the starting sound of the word “product”: Pppi = Ppproduct) of a bunch of factors.</p>
             </div>
             <!-- <div class="program-container">
-                
             </div> -->
             <div class="code-section">
                 <div class="code-desc">
-                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i></span>Here's how to implement factorial program in other programming languages.
+                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement sum and product rules program in other programming languages.</span>
                 </div>
                 <ul id="language-tab">
-                    <li class="active">JavaScript</li>
+                    <li class="active">JavaScript</li> 
                     <li>Python</li>
                     <li>Java</li>
                     <li>C</li>
@@ -53,9 +53,178 @@
                 <div id="code-tab">
                     <div class="code-content display-code">
                         <code>
+<pre>
+<span class="line">1</span>    const sum = (start, end) => {
+<span class="line">2</span>        let sum = 0;
+<span class="line">3</span>        for (; start <= end; start++)
+<span class="line">4</span>            sum += start;
+<span class="line">5</span>        return sum;
+<span class="line">6</span>    }
+<span class="line">7</span>    
+<span class="line">8</span>    const product = (start, end) => {
+<span class="line">9</span>        let product = 1;
+<span class="line">10</span>       for(; start <= end; start++)
+<span class="line">11</span>           product *= start;
+<span class="line">12</span>       return product;
+<span class="line">13</span>   }
+<span class="line">14</span>   let [start, end] = prompt("Enter the start and end values: ").split(" ").map( x => Number(x));
+<span class="line">15</span>    
+<span class="line">16</span>   console.log(`The summation of ${start} to ${end} is ${sum(start, end)}.`);
+<span class="line">17</span>   console.log(`The product of ${start} to ${end} is ${product(start, end)}.`)
+</pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/46nNIGltb"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/BlZ-Rtelv"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    summation = lambda start, end: sum([_ for _ in range(start, end+1)])
+<span class="line">2</span>    def product(start, end):
+<span class="line">3</span>        prod = 1
+<span class="line">4</span>        for i in range(start, end+1):
+<span class="line">5</span>            prod *= i
+<span class="line">6</span>        return prod
+<span class="line">7</span>    
+<span class="line">8</span>    start, end = map(lambda x: int(x), input("Enter the start and end: ").split())
+<span class="line">9</span>    print(f"The summation of start to end is {summation(start, end)}.")
+<span class="line">10</span>   print(f"The product of the start to end is {product(start, end)}.")
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/sgLGNMGfK"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    import java.util.Scanner;
+<span class="line">2</span>    public class Main
+<span class="line">3</span>    {
+<span class="line">4</span>        public static int summation(int start, int end) {
+<span class="line">5</span>            int sum = 0;
+<span class="line">6</span>            for(; start <= end; start++)
+<span class="line">7</span>                sum += start;
+<span class="line">8</span>            return sum;
+<span class="line">9</span>        }
+<span class="line">10</span>        
+<span class="line">11</span>        public static int product(int start, int end) {
+<span class="line">12</span>            int prod = 1;
+<span class="line">13</span>            for(; start <= end; start++)
+<span class="line">14</span>                prod *= start;
+<span class="line">15</span>            return prod;
+<span class="line">16</span>        }
+<span class="line">17</span>        public static void main(String[] args) {
+<span class="line">18</span>            Scanner input = new Scanner(System.in);
+<span class="line">19</span>            System.out.print("Start: ");
+<span class="line">20</span>            int start = input.nextInt();
+<span class="line">21</span>            System.out.print("End: ");
+<span class="line">22</span>            int end = input.nextInt();
+<span class="line">23</span>            
+<span class="line">24</span>            System.out.printf("The sum of %d to %d is %d\n", start, end, summation(start, end));
+<span class="line">25</span>            System.out.printf("The product of %d to %d is %d\n", start, end, product(start, end));
+<span class="line">26</span>        }
+<span class="line">27</span>    }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/lYnJVEX2Q"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;stdio.h>
+<span class="line">2</span>
+<span class="line">3</span>    int summation(int start, int end) {
+<span class="line">4</span>        int sum = 0;
+<span class="line">5</span>        for(; start <= end; start++)
+<span class="line">6</span>            sum += start;
+<span class="line">7</span>        return sum;
+<span class="line">8</span>    }
+<span class="line">9</span>    
+<span class="line">10</span>    int product(int start, int end) {
+<span class="line">11</span>        int prod = 1;
+<span class="line">12</span>        for(;start <= end; start++)
+<span class="line">13</span>            prod *= start;
+<span class="line">14</span>        return prod;
+<span class="line">15</span>    }
+<span class="line">16</span>    
+<span class="line">17</span>    int main() {
+<span class="line">18</span>        int start, end;
+<span class="line">19</span>        printf("Enter start and end: ");
+<span class="line">20</span>        scanf(" %d %d", &start, &end);
+<span class="line">21</span>        
+<span class="line">22</span>        printf("The sum of %d to %d is %d.\n", start, end, summation(start, end));
+<span class="line">23</span>        printf("The product of %d to %d is %d.\n", start, end, product(start, end));
+<span class="line">24</span>    }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/P0RyqRN0e"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include <iostream>
+<span class="line">2</span>    using namespace std;
+<span class="line">3</span>        
+<span class="line">4</span>    int summation(int start, int end) {
+<span class="line">5</span>        int sum = 0;
+<span class="line">6</span>        for(; start <= end; start++)
+<span class="line">7</span>            sum += start;
+<span class="line">8</span>            return sum;
+<span class="line">9</span>    }
+<span class="line">10</span>        
+<span class="line">11</span>   int product(int start, int end) {
+<span class="line">12</span>        int prod = 1;
+<span class="line">13</span>        for(;start <= end; start++)
+<span class="line">14</span>            prod *= start;
+<span class="line">15</span>        return prod;
+<span class="line">16</span>   }
+<span class="line">17</span>        
+<span class="line">18</span>   int main() {
+<span class="line">19</span>        int start, end;
+<span class="line">20</span>        cout << "Enter start and end: " ;
+<span class="line">21</span>        cin >> start >> end;
+<span class="line">22</span>            
+<span class="line">23</span>        cout << "The sum of " << start << "to " << end << "is " << summation(start, end) << endl;
+<span class="line">24</span>        cout << "The product of " << start << "to " << end << "is " << product(start, end) << endl;
+<span class="line">25</span>   }  
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/QrPlE6jSP"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    &lt;?php
+<span class="line">2</span>        function summation($start, $end) {
+<span class="line">3</span>            $sum = 0;
+<span class="line">4</span>            for(; $start <= $end; $start++) $sum += $start;
+<span class="line">5</span>            return $sum;
+<span class="line">6</span>        }
+<span class="line">7</span>    
+<span class="line">8</span>        function product($start, $end) {
+<span class="line">9</span>            $prod = 1;
+<span class="line">10</span>           for(; $start <= $end; $start++) $prod *= $start;
+<span class="line">11</span>           return $prod;
+<span class="line">12</span>        }
+<span class="line">13</span>        
+<span class="line">14</span>       $start = readline("start: ");
+<span class="line">15</span>       $end = readline("end: ");
+<span class="line">16</span>        
+<span class="line">17</span>       echo "The sum of {$start} to {$end} is " . summation($start, $end) . PHP_EOL;
+<span class="line">18</span>       echo "The product of {$start} to {$end} is " . product($start, $end);
+<span class="line">19</span>   ?>
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/9jp3FH71s"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +233,7 @@
                         <li class="active">Output</li>
                     </ul>
                     <div class="output-content">
-                        <img src="assets/img/factorial-output.png" alt="truth-table-output">
+                        <img src="assets/img/product-sum.png" alt="truth-table-output">
                     </div>
                 </div>
             </div>

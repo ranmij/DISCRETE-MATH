@@ -219,6 +219,9 @@ main .program-container {
         border-left: none;
     }
 
+    .algo-img {
+        width: 100%;
+    }
 }
 
 main .code-section {
@@ -297,7 +300,7 @@ main .code-section {
 
     .output-content {
         padding: .5rem;
-        background: #202124;
+        background: #000;
     }
 }
 
