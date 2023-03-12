@@ -29,6 +29,7 @@
             padding: .3rem;
             grid-gap: .2rem;
             grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: max-content;
         }
 
         .topic-content-container .boxes {
@@ -45,7 +46,7 @@
         }
 
         .boxes .box-desc-content p  {
-            font-size: .4rem;
+            font-size: .5rem;
         }
 
         .box-type-content .box-type {
@@ -63,6 +64,60 @@
         }
 
         .desc-container p {
+            font-size: .6rem;
+        }
+    }
+
+    main .topic-description {
+        p {
+            font-size: .6rem;
+        }
+        h1 {
+            font-size: .8rem;
+        }
+    }
+
+    main .code-section {
+        .code-desc {
+            padding: .3rem;
+            margin:  1rem 0 .5rem;
+        }
+
+        .code-desc span {
+            font-size: .6rem;
+        }
+
+        ul li{
+            font-size: .6rem;
+        }
+
+        .code-content {
+            font-size: .6rem;
+        }
+
+        .code-content .run-container a {
+            padding: .3rem;
+            font-size: .8rem;
+            width: 25px;
+            height: 25px;
+            right: 1rem;
+        }
+
+        .output-content img {
+            width: 100%;
+        }
+    }
+
+    main .program-container {
+        .input-container input {
+            font-size: .6rem;
+        }
+
+        .input-container button {
+            font-size: .6rem;
+        }
+
+        .table {
             font-size: .6rem;
         }
     }
@@ -106,6 +161,7 @@
             padding: .3rem;
             grid-gap: .2rem;
             grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: max-content;
         }
 
         .topic-content-container .boxes {
@@ -144,6 +200,60 @@
         }
     }
 
+    main .topic-description {
+        p {
+            font-size: .6rem;
+        }
+        h1 {
+            font-size: .8rem;
+        }
+    }
+
+    main .code-section {
+        .code-desc {
+            padding: .3rem;
+            margin:  1rem 0 .5rem;
+        }
+
+        .code-desc .b-icon {
+            font-size: .6rem;
+        }
+
+        ul li{
+            font-size: .6rem;
+        }
+
+        .code-content {
+            font-size: .6rem;
+        }
+
+        .code-content .run-container a {
+            padding: .3rem;
+            font-size: .8rem;
+            width: 25px;
+            height: 25px;
+            right: 1rem;
+        }
+
+        .output-content img {
+            width: 100%;
+        }
+    }
+
+    main .program-container {
+        .input-container input {
+            font-size: .6rem;
+        }
+
+        .input-container button {
+            font-size: .6rem;
+        }
+
+        .table {
+            font-size: .6rem;
+        }
+    }
+
     footer {
         padding: 0 !important;
         footer .footer-container {
@@ -158,12 +268,266 @@
     }
 }
 
-// media query for laptop devices
+// media query for tablet devices
 @mixin laptop-device {
+    .nav-content a {
+        font-size: .8rem;
+        letter-spacing: .5px !important;
+    }
 
+    header .nav-content {
+        padding: 0 .2rem !important;
+    }
+
+    body main {
+        margin: .4rem auto;
+        padding: .8rem .2rem !important;
+
+        .topic-container .topic-title {
+            font-size: .8rem;
+        }
+
+        .topic-content-container {
+            // overflow: hidden;
+            // width: calc(78px * 4 + .2rem * 2 + .3rem * 2 + .2rem);
+            padding: .3rem;
+            grid-gap: .2rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: max-content;
+        }
+
+        .topic-content-container .boxes {
+            padding: .3rem;
+        }
+
+        .boxes img {
+            margin-bottom: .3rem;
+            width: 16px;
+        }
+
+        .boxes .box-desc-content h2 {
+            font-size: .7rem;
+        }
+
+        .boxes .box-desc-content p  {
+            font-size: .6rem;
+        }
+
+        .box-type-content .box-type {
+            font-size: .5rem;
+        }
+
+        .topic-container .expand-icon {
+            height: 20px;
+            width: 20px;
+            font-size: .5rem;
+        }
+
+        .desc-container {
+            padding: .8rem .3rem;
+        }
+
+        .desc-container p {
+            font-size: .6rem;
+        }
+    }
+
+    main .topic-description {
+        p {
+            font-size: .6rem;
+        }
+        h1 {
+            font-size: .8rem;
+        }
+    }
+
+    main .code-section {
+        .code-desc {
+            padding: .3rem;
+            margin:  1rem 0 .5rem;
+        }
+
+        .code-desc .b-icon {
+            font-size: .6rem;
+        }
+
+        ul li{
+            font-size: .6rem;
+        }
+
+        .code-content {
+            font-size: .6rem;
+        }
+
+        .code-content .run-container a {
+            padding: .3rem;
+            font-size: .8rem;
+            width: 25px;
+            height: 25px;
+            right: 1rem;
+        }
+
+        .output-content img {
+            width: 100%;
+        }
+    }
+
+    main .program-container {
+        .input-container input {
+            font-size: .6rem;
+        }
+
+        .input-container button {
+            font-size: .6rem;
+        }
+
+        .table {
+            font-size: .6rem;
+        }
+    }
+
+    footer {
+        padding: 0 !important;
+        footer .footer-container {
+            width: 100% !important;
+        }
+
+        .bottomf-container {
+            & .b-c span {
+                font-size: .7rem;
+            }
+        }
+    }
 }
 
-// media query for desktop devices
+// media query for tablet devices
 @mixin desktop-device {
+    .nav-content a {
+        font-size: .8rem;
+        letter-spacing: .5px !important;
+    }
 
+    header .nav-content {
+        padding: 0 .2rem !important;
+    }
+
+    body main {
+        margin: .4rem auto;
+        padding: .8rem .2rem !important;
+
+        .topic-container .topic-title {
+            font-size: .8rem;
+        }
+
+        .topic-content-container {
+            // overflow: hidden;
+            // width: calc(78px * 4 + .2rem * 2 + .3rem * 2 + .2rem);
+            padding: .3rem;
+            grid-gap: .2rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: max-content;
+        }
+
+        .topic-content-container .boxes {
+            padding: .3rem;
+        }
+
+        .boxes img {
+            margin-bottom: .3rem;
+            width: 16px;
+        }
+
+        .boxes .box-desc-content h2 {
+            font-size: .6rem;
+        }
+
+        .boxes .box-desc-content p  {
+            font-size: .6rem;
+        }
+
+        .box-type-content .box-type {
+            font-size: .4rem;
+        }
+
+        .topic-container .expand-icon {
+            height: 20px;
+            width: 20px;
+            font-size: .5rem;
+        }
+
+        .desc-container {
+            padding: .8rem .3rem;
+        }
+
+        .desc-container p {
+            font-size: .6rem;
+        }
+    }
+
+    main .topic-description {
+        p {
+            font-size: .6rem;
+        }
+        h1 {
+            font-size: .8rem;
+        }
+    }
+
+    main .code-section {
+        .code-desc {
+            padding: .3rem;
+            margin:  1rem 0 .5rem;
+        }
+
+        .code-desc .b-icon {
+            font-size: .6rem;
+        }
+
+        ul li{
+            font-size: .6rem;
+        }
+
+        .code-content {
+            font-size: .6rem;
+        }
+
+        .code-content .run-container a {
+            padding: .3rem;
+            font-size: .8rem;
+            width: 25px;
+            height: 25px;
+            right: 1rem;
+        }
+
+        .output-content img {
+            width: 100%;
+        }
+    }
+
+    main .program-container {
+        .input-container input {
+            font-size: .6rem;
+        }
+
+        .input-container button {
+            font-size: .6rem;
+        }
+
+        .table {
+            font-size: .6rem;
+        }
+    }
+
+    footer {
+        padding: 0 !important;
+        footer .footer-container {
+            width: 100% !important;
+        }
+
+        .bottomf-container {
+            & .b-c span {
+                font-size: .6rem;
+            }
+        }
+    }
 }

@@ -8,7 +8,7 @@
         <meta name="keywords" content="Discrete, Math, Discrete Structures">
         <meta name="author" content="Our Group">
         <meta property="og:title" content="Discrete Mathematics"/>
-        <meta property="og:image" content="catto.png"/>
+        <meta property="og:image" content="assets/img/crying-cat-banner.png"/>
         <meta property="og:image:type" content="image/png" />
         <meta property="og:description" content="Discover a new way of learning."/>
         <meta property="og:url" content="#"/>
@@ -53,9 +53,144 @@
                 <div id="code-tab">
                     <div class="code-content display-code">
                         <code>
+<pre>
+    const euclidean = (num_x, num_y) => {
+        let r;
+        while ((num_x % num_y) > 0)  {
+            r = num_x % num_y;
+            num_x = num_y;
+            num_y = r;
+        }
+        return num_y;
+    }
+    let [a, b] = prompt("Enter two values: ").split(" ").map(x => Number(x));
+    console.log(`The greatest commond divisor of ${a} and ${b} is ${euclidean(a, b)}.`)
+</pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/46nNIGltb"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/kdQBh0cx6"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+    def euclidean(num_x, num_y):
+        r = 0
+        while num_x % num_y > 0:
+            r = num_x % num_y
+            num_x = num_y
+            num_y = r 
+        return num_y
+        
+    a, b = list(map(lambda x: int(x), input("Enter two values: ").split(" ")))
+    print(f"The greatest common divisor of {a} and {b} is {euclidean(a, b)}.")
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/D7mEjArz3"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+    import java.util.Scanner;
+
+    public class Main
+    {
+        public static int euclidean(int num_x, int num_y) {
+            int r;
+            while(num_x % num_y > 0) {
+                r = num_x % num_y;
+                num_x = num_y;
+                num_y = r;
+            }
+            return num_y;
+        }
+        
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Enter two values: ");
+            int a = input.nextInt();
+            int b = input.nextInt();
+            
+            System.out.printf("The greatest common divisor of %d and %d is %d.\n", a, b, euclidean(a, b));
+        }
+    }    
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/6Iys4UNGc"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+    #include <stdio.h>
+
+    int euclidean(int num_x, int num_y) {
+        int r;
+        while(num_x % num_y > 0) {
+            r = num_x % num_y;
+            num_x = num_y;
+            num_y = r;
+        }
+        return num_y;
+    }
+    
+    int main()
+    {
+        int a, b;
+        printf("Enter two values: ");
+        scanf(" %d %d", &a, &b);
+        printf("The greatest common divisor of %d and %d is %d.\n", a, b, euclidean(a, b));
+        return 0;
+    }
+        
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/tm7zqoCyI"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+    #include <iostream>
+    using namespace std;
+    
+    int euclidean(int num_x, int num_y) {
+        int r;
+        while(num_x % num_y > 0) {
+            r = num_x % num_y;
+            num_x = num_y;
+            num_y = r;
+        }
+        return num_y;
+    }
+    
+    int main()
+    {
+        int a, b;
+        cout << "Enter two values: ";
+        cin >> a >> b;
+        cout << "The greatest common divisor of " << a << " and " << b << " is "<< euclidean(a, b) << ".\n";
+        return 0;
+    }
+        
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/kdQBh0cx6"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/kdQBh0cx6"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>

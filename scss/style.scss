@@ -12,6 +12,7 @@ body {
 
 // Begin Nav Style
 body header .nav-container {
+    background-color: $nav-color;
     padding: .8rem 0;
 }
 
@@ -47,7 +48,7 @@ body main {
     .topic-content-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: max-content;
         grid-gap: .4rem;
         padding: .5rem;
         background: rgb(226, 232, 240, .5);
@@ -327,11 +328,10 @@ main .display-code {
     @include tablet-device;
 }
 
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     @include laptop-device;
 }
 
-@media screen and (min-width: 1025) and (max-width: 1200) {
-    @include desktop-device;
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    @include laptop-device;
 }
