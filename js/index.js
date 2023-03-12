@@ -20,7 +20,7 @@ const topics = [
         type : 'Notes'
     },
     {
-        title : 'Matrices of Relations',
+        title : 'Matrices Relations',
         desc : 'Sets and relation are interconnected with each other. The relation defines the relation between two given sets. If there are two sets available, then to check if there is any connection between the two sets, we use relations. For example, an empty relation denotes none of the elements in the two sets is same.',
         link : 'matrices-of-relation.html',
         type : 'Notes'

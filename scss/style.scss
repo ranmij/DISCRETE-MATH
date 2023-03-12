@@ -17,6 +17,8 @@ body header .nav-container {
 
 body header .nav-content {
     width: $center-width;
+    padding: 0 .8rem;
+    margin: 0 auto;
     a {
         letter-spacing: 2px;
     }
@@ -25,6 +27,7 @@ body header .nav-content {
         color: $primary-light;
     }
 }
+
 // End Nav Style
 
 // Begin Main Content Style
@@ -312,3 +315,23 @@ main .display-code {
     display: block;
 }
 // End pages Style
+
+// media queries
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    @include mobile-device;
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    @include tablet-device;
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    @include laptop-device;
+}
+
+@media screen and (min-width: 1025) and (max-width: 1200) {
+    @include desktop-device;
+}
