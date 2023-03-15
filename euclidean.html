@@ -11,7 +11,7 @@
         <meta property="og:image" content="assets/img/crying-cat-banner.png"/>
         <meta property="og:image:type" content="image/png" />
         <meta property="og:description" content="Discover a new way of learning."/>
-        <meta property="og:url" content="#"/>
+        <meta property="og:url" content="https://discrete-mathematics.vercel.app"/>
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="627" />
         <meta property="og:type" content='website'/>
@@ -25,21 +25,39 @@
         <header class="head-container">
             <nav class="navbar bg-body-tertiary nav-container">
                 <div class="nav-content">
-                <a class="navbar-brand" href="#">DISCRETE <span>MATHEMATICS</span></a>
+                <a class="navbar-brand" href="index.html">DISCRETE <span>MATHEMATICS</span></a>
                 </div>
             </nav>
         </header>
         <main>
             <div class="topic-description">
                 <h1 class="topic-title">Euclidean Algorithm</h1>
-                <p>— In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. The factorial of n also equals the product of n with the next smaller factorial: For example, The value of 0! is 1, according to the convention for an empty product.</p>
+                <p>— In mathematics, the Euclidean algorithm, or Euclid's algorithm, is an efficient method for computing the greatest common divisor of two integers, the largest number that divides them both without a remainder. It is named after the ancient Greek mathematician Euclid, who first described it in his Elements.</p>
             </div>
-            <!-- <div class="program-container">
+            <div class="program-container">
+                <h4 class="text-center">Euclidean Calculator</h4>
+                <div class="calc-container">
+                    <div class="inputs-container">
+                        <div class="euc-inputs">
+                            <label for="value-a" class="bg-primary text-white">VALUE:</label>
+                            <input type="text" name="value-a">
+                        </div>
+                        <div class="euc-inputs">
+                            <label for="value-b" class="bg-primary text-white">VALUE:</label>
+                            <input type="text" name="value-b">
+                        </div>
+                        <div class="euc-inputs">
+                            <label for="answer" class="bg-primary text-white">ANSWER:</label>
+                            <input type="text" name="answer">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" id="calc-euc">Caclulate</button>
+                </div>
                 
-            </div> -->
+            </div>
             <div class="code-section">
                 <div class="code-desc">
-                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement factorial program in other programming languages.</span>
+                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement euclid algorithm program in other programming languages.</span>
                 </div>
                 <ul id="language-tab">
                     <li class="active">JavaScript</li>
@@ -54,17 +72,17 @@
                     <div class="code-content display-code">
                         <code>
 <pre>
-    const euclidean = (num_x, num_y) => {
-        let r;
-        while ((num_x % num_y) > 0)  {
-            r = num_x % num_y;
-            num_x = num_y;
-            num_y = r;
-        }
-        return num_y;
-    }
-    let [a, b] = prompt("Enter two values: ").split(" ").map(x => Number(x));
-    console.log(`The greatest commond divisor of ${a} and ${b} is ${euclidean(a, b)}.`)
+<span class="line">1</span>    const euclidean = (num_x, num_y) => {
+<span class="line">2</span>        let r;
+<span class="line">3</span>        while ((num_x % num_y) > 0)  {
+<span class="line">4</span>            r = num_x % num_y;
+<span class="line">5</span>            num_x = num_y;
+<span class="line">6</span>            num_y = r;
+<span class="line">7</span>        }
+<span class="line">8</span>        return num_y;
+<span class="line">9</span>    }
+<span class="line">10</span>   let [a, b] = prompt("Enter two values: ").split(" ").map(x => Number(x));
+<span class="line">11</span>   console.log(`The greatest commond divisor of ${a} and ${b} is ${euclidean(a, b)}.`)
 </pre>
                         </code>
                         <div class="run-container">
@@ -74,16 +92,16 @@
                     <div class="code-content hidden-code">
                         <code>
 <pre>
-    def euclidean(num_x, num_y):
-        r = 0
-        while num_x % num_y > 0:
-            r = num_x % num_y
-            num_x = num_y
-            num_y = r 
-        return num_y
-        
-    a, b = list(map(lambda x: int(x), input("Enter two values: ").split(" ")))
-    print(f"The greatest common divisor of {a} and {b} is {euclidean(a, b)}.")
+<span class="line">1</span>    def euclidean(num_x, num_y):
+<span class="line">2</span>        r = 0
+<span class="line">3</span>        while num_x % num_y > 0:
+<span class="line">4</span>            r = num_x % num_y
+<span class="line">5</span>            num_x = num_y
+<span class="line">6</span>            num_y = r 
+<span class="line">7</span>        return num_y
+<span class="line">8</span>        
+<span class="line">9</span>    a, b = list(map(lambda x: int(x), input("Enter two values: ").split(" ")))
+<span class="line">10</span>   print(f"The greatest common divisor of {a} and {b} is {euclidean(a, b)}.")
 </pre>
                         </code>
                         <div class="run-container">
@@ -93,29 +111,29 @@
                     <div class="code-content hidden-code">
                         <code>
 <pre>
-    import java.util.Scanner;
-
-    public class Main
-    {
-        public static int euclidean(int num_x, int num_y) {
-            int r;
-            while(num_x % num_y > 0) {
-                r = num_x % num_y;
-                num_x = num_y;
-                num_y = r;
-            }
-            return num_y;
-        }
-        
-        public static void main(String[] args) {
-            Scanner input = new Scanner(System.in);
-            System.out.print("Enter two values: ");
-            int a = input.nextInt();
-            int b = input.nextInt();
-            
-            System.out.printf("The greatest common divisor of %d and %d is %d.\n", a, b, euclidean(a, b));
-        }
-    }    
+<span class="line">1</span>    import java.util.Scanner;
+<span class="line">2</span>
+<span class="line">3</span>    public class Main
+<span class="line">4</span>    {
+<span class="line">5</span>        public static int euclidean(int num_x, int num_y) {
+<span class="line">6</span>            int r;
+<span class="line">7</span>            while(num_x % num_y > 0) {
+<span class="line">8</span>                r = num_x % num_y;
+<span class="line">9</span>                num_x = num_y;
+<span class="line">10</span>               num_y = r;
+<span class="line">11</span>           }
+<span class="line">12</span>           return num_y;
+<span class="line">13</span>       }
+<span class="line">14</span>       
+<span class="line">15</span>       public static void main(String[] args) {
+<span class="line">16</span>           Scanner input = new Scanner(System.in);
+<span class="line">17</span>           System.out.print("Enter two values: ");
+<span class="line">18</span>           int a = input.nextInt();
+<span class="line">19</span>           int b = input.nextInt();
+<span class="line">20</span>            
+<span class="line">21</span>           System.out.printf("The greatest common divisor of %d and %d is %d.\n", a, b, euclidean(a, b));
+<span class="line">22</span>       }
+<span class="line">23</span>   }    
 </pre>
                         </code>
                         <div class="run-container">
@@ -125,27 +143,26 @@
                     <div class="code-content hidden-code">
                         <code>
 <pre>
-    #include <stdio.h>
-
-    int euclidean(int num_x, int num_y) {
-        int r;
-        while(num_x % num_y > 0) {
-            r = num_x % num_y;
-            num_x = num_y;
-            num_y = r;
-        }
-        return num_y;
-    }
-    
-    int main()
-    {
-        int a, b;
-        printf("Enter two values: ");
-        scanf(" %d %d", &a, &b);
-        printf("The greatest common divisor of %d and %d is %d.\n", a, b, euclidean(a, b));
-        return 0;
-    }
-        
+<span class="line">1</span>    #include &lt;stdio.h>
+<span class="line">2</span>
+<span class="line">3</span>    int euclidean(int num_x, int num_y) {
+<span class="line">4</span>        int r;
+<span class="line">5</span>        while(num_x % num_y > 0) {
+<span class="line">6</span>            r = num_x % num_y;
+<span class="line">7</span>            num_x = num_y;
+<span class="line">8</span>            num_y = r;
+<span class="line">9</span>        }
+<span class="line">10</span>       return num_y;
+<span class="line">11</span>   }
+<span class="line">12</span>    
+<span class="line">13</span>   int main()
+<span class="line">14</span>   {
+<span class="line">15</span>       int a, b;
+<span class="line">16</span>       printf("Enter two values: ");
+<span class="line">17</span>       scanf(" %d %d", &a, &b);
+<span class="line">18</span>       printf("The greatest common divisor of %d and %d is %d.\n", a, b, euclidean(a, b));
+<span class="line">19</span>       return 0;
+<span class="line">20</span>   }
 </pre>
                         </code>
                         <div class="run-container">
@@ -155,42 +172,54 @@
                     <div class="code-content hidden-code">
                         <code>
 <pre>
-    #include <iostream>
-    using namespace std;
-    
-    int euclidean(int num_x, int num_y) {
-        int r;
-        while(num_x % num_y > 0) {
-            r = num_x % num_y;
-            num_x = num_y;
-            num_y = r;
-        }
-        return num_y;
-    }
-    
-    int main()
-    {
-        int a, b;
-        cout << "Enter two values: ";
-        cin >> a >> b;
-        cout << "The greatest common divisor of " << a << " and " << b << " is "<< euclidean(a, b) << ".\n";
-        return 0;
-    }
-        
+<span class="line">1</span>    #include &lt;iostream>
+<span class="line">2</span>    using namespace std;
+<span class="line">3</span>    
+<span class="line">4</span>    int euclidean(int num_x, int num_y) {
+<span class="line">5</span>        int r;
+<span class="line">6</span>        while(num_x % num_y > 0) {
+<span class="line">7</span>            r = num_x % num_y;
+<span class="line">8</span>            num_x = num_y;
+<span class="line">9</span>            num_y = r;
+<span class="line">10</span>       }
+<span class="line">11</span>       return num_y;
+<span class="line">12</span>   }
+<span class="line">13</span>    
+<span class="line">14</span>   int main()
+<span class="line">15</span>   {
+<span class="line">16</span>       int a, b;
+<span class="line">17</span>       cout << "Enter two values: ";
+<span class="line">18</span>       cin >> a >> b;
+<span class="line">19</span>       cout << "The greatest common divisor of " << a << " and " << b << " is "<< euclidean(a, b) << ".\n";
+<span class="line">20</span>       return 0;
+<span class="line">21</span>   }
 </pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/kdQBh0cx6"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/A2DgWUt13"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                     <div class="code-content hidden-code">
                         <code>
 <pre>
-
+<span class="line">1</span>    &lt;?php
+<span class="line">2</span>        function euclidean($num_x, $num_y) {
+<span class="line">3</span>            $r = 0;
+<span class="line">4</span>            while($num_x % $num_y > 0) {
+<span class="line">5</span>                $r = $num_x % $num_y;
+<span class="line">6</span>                $num_x = $num_y;
+<span class="line">7</span>                $num_y = $r;
+<span class="line">8</span>            }
+<span class="line">9</span>            return $num_y;
+<span class="line">10</span>       }
+<span class="line">11</span>        
+<span class="line">12</span>       $values = array_map( function ($x) { return (int)$x; }, explode(" ", readline("Enter two values: ")));
+<span class="line">13</span>       echo "The greatest common divisor of " . $values[0] . " and " . $values[1] . " is " . euclidean($values[0], $values[1]) . PHP_EOL;
+<span class="line">14</span>   ?>
 </pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/kdQBh0cx6"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/ogfmVZmkE"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>

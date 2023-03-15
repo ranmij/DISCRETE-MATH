@@ -125,14 +125,14 @@ body main {
     }
 
     // Website Description
-    .desc-container {
-        padding: 2rem .5em;
-        background: rgb(226, 232, 240, .5);
-    }
+    // .desc-container {
+    //     padding: 2rem .5em;
+    //     background: rgb(226, 232, 240, .5);
+    // }
 
-    .desc-container p {
-        text-indent: 2rem;
-    }
+    // .desc-container p {
+    //     text-indent: 2rem;
+    // }
 }
 // End Main Content Style
 
@@ -223,11 +223,66 @@ main .program-container {
         border-left: none;
     }
 
+    // Euclidean Algorithm
+    h4 {
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+
+    .calc-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .calc-container button {
+        width: 50%;
+        text-transform: uppercase;
+    }
+
+    .calc-container .inputs-container {
+        width: 50%;
+        
+    }
+
+    .euc-inputs {
+        display: flex;
+        align-items: center;
+    }
+
+    .euc-inputs label {
+        width: 20%;
+        text-align: center;
+        border: 1px solid $dark-color;
+        border-right: none;
+        padding: .3rem .5rem;
+    }
+
+    .euc-inputs input {
+        width: 80%;
+        padding: .29rem;
+        margin: .3rem 0;
+        border: 1px solid $dark-color;
+        border-left: none;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .euc-ans {
+        width: 50%;
+        padding: 1rem 0;
+    }
+
     .algo-img {
         width: 100%;
     }
 }
 
+// code sections
 main .code-section {
     
     .code-desc {
@@ -308,17 +363,18 @@ main .code-section {
     }
 }
 
+// hidden panel of codes
 main .hidden-code {
     display: none;
 }
 
+// when the panel is displayed
 main .display-code {
     display: block;
 }
 // End pages Style
 
 // media queries
-
 @media screen and (min-width: 320px) and (max-width: 480px) {
     @include mobile-device;
 }

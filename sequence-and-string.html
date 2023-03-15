@@ -11,7 +11,7 @@
         <meta property="og:image" content="assets/img/crying-cat-banner.png"/>
         <meta property="og:image:type" content="image/png" />
         <meta property="og:description" content="Discover a new way of learning."/>
-        <meta property="og:url" content="#"/>
+        <meta property="og:url" content="https://discrete-mathematics.vercel.app"/>
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="627" />
         <meta property="og:type" content='website'/>
@@ -25,7 +25,7 @@
         <header class="head-container">
             <nav class="navbar bg-body-tertiary nav-container">
                 <div class="nav-content">
-                <a class="navbar-brand" href="#">DISCRETE <span>MATHEMATICS</span></a>
+                <a class="navbar-brand" href="index.html">DISCRETE <span>MATHEMATICS</span></a>
                 </div>
             </nav>
         </header>
@@ -53,9 +53,205 @@
                 <div id="code-tab">
                     <div class="code-content display-code">
                         <code>
+<pre>
+<span class="line">1</span>    const permute = (sequence, lower_index, upper_index) => {
+<span class="line">2</span>        if(lower_index === upper_index)
+<span class="line">3</span>            console.log(sequence.join())
+<span class="line">4</span>        else
+<span class="line">5</span>            for (let i = 0; i <= upper_index; i++) {
+<span class="line">6</span>                [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
+<span class="line">7</span>                permute(sequence, lower_index + 1, upper_index);
+<span class="line">8</span>                [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
+<span class="line">9</span>            }
+<span class="line">10</span>   }
+<span class="line">11</span>   let sequence = prompt("Enter a string: ").split("")
+<span class="line">12</span>   permute(sequence, 0, sequence.length-1)
+</pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/46nNIGltb"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/Qn02rTzAs"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    def permute(sequence, lower_index, upper_index):
+<span class="line">2</span>        if lower_index == upper_index:
+<span class="line">3</span>            print(",".join(sequence))
+<span class="line">4</span>        else:
+<span class="line">5</span>            for i in range(lower_index, upper_index):
+<span class="line">6</span>                sequence[lower_index], sequence[i] = sequence[i], sequence[lower_index]
+<span class="line">7</span>                permute(sequence, lower_index + 1, upper_index)
+<span class="line">8</span>                sequence[lower_index], sequence[i] = sequence[i], sequence[lower_index]
+<span class="line">9</span>
+<span class="line">10</span>   sequence = input("Enter a string separated by comma: ").split(",")
+<span class="line">11</span>
+<span class="line">12</span>   print("Possible combinations:")
+<span class="line">13</span>   permute(sequence, 0, len(sequence))
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/wQfGLnsc5"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    import java.util.Scanner;
+<span class="line">2</span>    import java.util.Arrays;
+<span class="line">3</span>    
+<span class="line">4</span>    public class Main
+<span class="line">5</span>    {
+<span class="line">6</span>        
+<span class="line">7</span>        public static void permute(String sequence[], int lower_index, int upper_index) {
+<span class="line">8</span>            String temp;
+<span class="line">9</span>            if (lower_index == upper_index)
+<span class="line">10</span>               System.out.println(String.join(",", sequence));
+<span class="line">11</span>           else
+<span class="line">12</span>               for(int i = lower_index; i <= upper_index; i++) {
+<span class="line">13</span>                   temp = sequence[i];
+<span class="line">14</span>                   sequence[i] = sequence[lower_index];
+<span class="line">15</span>                   sequence[lower_index] = temp;
+<span class="line">16</span>                   permute(sequence, lower_index + 1, upper_index);
+<span class="line">17</span>                   temp = sequence[i];
+<span class="line">18</span>                   sequence[i] = sequence[lower_index];
+<span class="line">19</span>                   sequence[lower_index] = temp;
+<span class="line">20</span>               }
+<span class="line">21</span>       }
+<span class="line">22</span>       public static void main(String[] args) {
+<span class="line">23</span>           Scanner input = new Scanner(System.in);
+<span class="line">24</span>           System.out.print("Enter a string: ");
+<span class="line">25</span>           String sequence[] = input.nextLine().split("");
+<span class="line">26</span>           
+<span class="line">27</span>           System.out.println("Possible combinations: ");
+<span class="line">28</span>           permute(sequence, 0, sequence.length-1);
+<span class="line">29</span>            
+<span class="line">30</span>       }
+<span class="line">31</span>   }
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/lSlZBytnO"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;stdio.h> 
+<span class="line">2</span>    #include &lt;string.h> 
+<span class="line">3</span>        
+<span class="line">4</span>    void swap(char *x, char *y) 
+<span class="line">5</span>    { 
+<span class="line">6</span>        char temp; 
+<span class="line">7</span>        temp = *x; 
+<span class="line">8</span>        *x = *y; 
+<span class="line">9</span>        *y = temp; 
+<span class="line">10</span>   } 
+<span class="line">11</span>        
+<span class="line">12</span>   void permute(char *a, int l, int r) 
+<span class="line">13</span>   { 
+<span class="line">14</span>       int i; 
+<span class="line">15</span>       if (l == r) 
+<span class="line">16</span>           printf("%s\n", a); 
+<span class="line">17</span>       else
+<span class="line">18</span>       { 
+<span class="line">19</span>           for (i = l; i <= r; i++) 
+<span class="line">20</span>           { 
+<span class="line">21</span>               swap((a + l), (a + i)); 
+<span class="line">22</span>               permute(a, l + 1, r); 
+<span class="line">23</span>       
+<span class="line">24</span>               //backtrack 
+<span class="line">26</span>               swap((a + l), (a + i)); 
+<span class="line">27</span>           } 
+<span class="line">28</span>       } 
+<span class="line">29</span>   } 
+<span class="line">30</span>    
+<span class="line">31</span>   int main() 
+<span class="line">32</span>   { 
+<span class="line">33</span>       char str[100];
+<span class="line">34</span>       printf("Enter a string: ");
+<span class="line">35</span>       scanf(" %s", str);
+<span class="line">36</span>       int n = strlen(str);
+<span class="line">37</span>       printf("Possible combinations: \n");
+<span class="line">38</span>       permute(str, 0, n-1); 
+<span class="line">39</span>       return 0; 
+<span class="line">40</span>   } 
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/vzDP_ipe5"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    #include &lt;iostream> 
+<span class="line">2</span>    using namespace std;
+<span class="line">3</span>        
+<span class="line">4</span>    void swap(char *x, char *y) 
+<span class="line">5</span>    { 
+<span class="line">6</span>        char temp; 
+<span class="line">7</span>        temp = *x; 
+<span class="line">8</span>        *x = *y; 
+<span class="line">9</span>        *y = temp; 
+<span class="line">10</span>   } 
+<span class="line">11</span>        
+<span class="line">12</span>   void permute(string a, int l, int r) 
+<span class="line">13</span>   { 
+<span class="line">14</span>       int i; 
+<span class="line">15</span>       if (l == r) { 
+<span class="line">16</span>           cout << a << endl;; 
+<span class="line">17</span>       } else {
+<span class="line">18</span>           for (i = l; i <= r; i++) 
+<span class="line">19</span>           { 
+<span class="line">20</span>               swap(a[l], a[i]); 
+<span class="line">21</span>               permute(a, l + 1, r); 
+<span class="line">22</span>               swap(a[l], a[i]); 
+<span class="line">23</span>           }
+<span class="line">24</span>       }
+<span class="line">25</span>   } 
+<span class="line">26</span>    
+<span class="line">27</span>   int main() 
+<span class="line">28</span>   { 
+<span class="line">29</span>       string str;
+<span class="line">30</span>       cout << "Enter a string: ";
+<span class="line">31</span>       cin >> str;
+<span class="line">32</span>       cout << "Possible combinations: \n";
+<span class="line">33</span>       permute(str, 0, str.length()-1); 
+<span class="line">34</span>       return 0; 
+<span class="line">35</span>   } 
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/Q96-fQK-3"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="code-content hidden-code">
+                        <code>
+<pre>
+<span class="line">1</span>    &lt;?php
+<span class="line">2</span>        function permute($sequence, $lower_index, $upper_index)  {
+<span class="line">3</span>            if ($lower_index === $upper_index)
+<span class="line">4</span>                echo implode(",", $sequence) . PHP_EOL;
+<span class="line">5</span>            else
+<span class="line">6</span>                for($i = $lower_index; $i <= $upper_index; $i++) {
+<span class="line">7</span>                    $temp = $sequence[$i];
+<span class="line">8</span>                    $sequence[$i] = $sequence[$lower_index];
+<span class="line">9</span>                    $sequence[$lower_index] = $temp;
+<span class="line">10</span>                   permute($sequence, $lower_index + 1, $upper_index);
+<span class="line">11</span>                   $temp = $sequence[$i];
+<span class="line">12</span>                   $sequence[$i] = $sequence[$lower_index];
+<span class="line">13</span>                   $sequence[$lower_index] = $temp;
+<span class="line">14</span>               }
+<span class="line">15</span>       }
+<span class="line">16</span>       $sequence = explode(",", readline("Enter a separated by comma: "));
+<span class="line">17</span>       echo "Possible combinations: \n";
+<span class="line">18</span>       permute($sequence, 0, count($sequence)-1)
+<span class="line">19</span>   ?>
+</pre>
+                        </code>
+                        <div class="run-container">
+                            <a class="bg-primary" href="https://onlinegdb.com/acg6LDUIu"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +260,7 @@
                         <li class="active">Output</li>
                     </ul>
                     <div class="output-content">
-                        <img src="assets/img/factorial-output.png" alt="truth-table-output">
+                        <img src="assets/img/string-seq.png" alt="truth-table-output">
                     </div>
                 </div>
             </div>
