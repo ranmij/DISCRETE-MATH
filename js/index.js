@@ -15,7 +15,7 @@ const topics = [
     },
     {
         title : 'Sets',
-        desc : 'A set is the mathematical model for a collection of different things; a set contains elements or members, which can be mathematical objects of any kind: numbers, symbols, points in space, lines, other geometrical shapes, variables, or even other sets.',
+        desc : 'A set is the mathematical model for a collection of different things; a set contains elements or members, which can be mathematical objects of any kind: numbers, symbols, points in space, lines, other geometrical shapes, letiables, or even other sets.',
         link : 'sets.html',
         type : 'Notes'
     },
@@ -91,6 +91,12 @@ const euclidean = (num_x, num_y) => {
     return num_y;
 }
 
+/**
+ * To generate a permutation of given string
+ * @param {*} sequence string sequence
+ * @param {*} lower_index lower index of string
+ * @param {*} upper_index upper index of string
+ */
 const sequence_builder = (sequence, lower_index, upper_index) => {
     if(lower_index === upper_index) {
             let node = $('<li></li>').text(sequence.join(', ')).addClass('text-center list-group-item')
@@ -100,6 +106,48 @@ const sequence_builder = (sequence, lower_index, upper_index) => {
             [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
             sequence_builder(sequence, lower_index + 1, upper_index);
             [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
+        }
+}
+
+const magic_square = (dimension) => {
+    let magicSquare = Array(dimension).fill(0).map(x => Array(dimension).fill(0));
+
+        let i = parseInt(dimension / 2);
+        let j = dimension - 1;
+        
+        for (num = 1; num <= dimension * dimension;) {
+            if (i == -1 && j == dimension)
+            {
+                j = dimension - 2;
+                i = 0;
+            }
+            else {
+                if (j == dimension)
+                    j = 0;
+                    
+                if (i < 0)
+                    i = dimension - 1;
+            }
+     
+            if (magicSquare[i][j] != 0) {
+                j -= 2;
+                i++;
+                continue;
+            }
+            else
+                magicSquare[i][j] = num++;
+            j++;
+            i--;
+        }
+
+        let table_node = $('#magic-table');
+        for (i = 0; i < dimension; i++) {
+            let row_node = $('<tr></tr>')
+            for (j = 0; j < dimension; j++) {
+                let column_node = $('<td></td>').text(magicSquare[i][j]).addClass('text-center');
+                row_node.append(column_node);
+            }
+            table_node.append(row_node);
         }
 }
 
@@ -182,4 +230,9 @@ $(document).ready(function() {
         let sequence = $('#str-sec').val().split('');
         sequence_builder(sequence, 0, sequence.length-1);
     });
+
+    $('#magic-generate').click(() => {
+        let table_node = $('#magic-table').empty();
+        magic_square(Number($('#magic-sqrt').val()));
+    })
 }); 

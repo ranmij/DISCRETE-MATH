@@ -266,7 +266,7 @@ main .program-container {
 
     .euc-inputs input {
         width: 80%;
-        padding: .2rem;
+        padding: .3rem;
         margin: .3rem 0;
         border: 1px solid $dark-color;
         border-left: none;
@@ -281,17 +281,21 @@ main .program-container {
     }
 
     // String and sequence page
-    .str-sec-container {
+    .str-sec-container, .magic-square-container{
         width: 80%;
         margin: 0 auto;
     }
 
-    .str-sec-container .str-sec-inp {
+    .magic-square-container {
+        width: 50%;
+    }
+
+    .str-sec-container .str-sec-inp, .magic-square-container .magic-sqrt-inp {
         display: flex;
 
     }
 
-    .str-sec-container .str-sec-inp input{
+    .str-sec-container .str-sec-inp input, .magic-square-container .magic-sqrt-inp input{
         width: 90%;
         border: 1px solid #000;
         border-right: none;
@@ -300,7 +304,9 @@ main .program-container {
             outline: none;
         }
     }
-    .str-sec-container .str-sec-inp button {
+
+
+    .str-sec-container .str-sec-inp button,.magic-square-container .magic-sqrt-inp button {
         width: 20%;
         border: 1px solid #000;
         border-left: none;
@@ -309,7 +315,13 @@ main .program-container {
 
     .algo-img {
         width: 100%;
-        border: 1px solid #000;
+    }
+}
+
+.faq-container {
+    h1 {
+        font-weight: 400;
+
     }
 }
 
