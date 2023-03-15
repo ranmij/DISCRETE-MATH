@@ -73,6 +73,36 @@ const topics = [
 const topic_type = [ 'Algorithm', 'Program', 'Notes'];
 const topic_imgs = [ 'assets/img/algorithm.png', 'assets/img/program.png', 'assets/img/notebook.png'];
 
+// Functions for some pages
+
+/**
+ * To calculate the greatest common divisor of inputs
+ * @param {*} num_x 
+ * @param {*} num_y 
+ * @returns num_y - the number of gcd of inputs
+ */
+const euclidean = (num_x, num_y) => {
+    let r;
+    while ((num_x % num_y) > 0)  {
+        r = num_x % num_y;
+        num_x = num_y;
+        num_y = r;
+    }
+    return num_y;
+}
+
+const sequence_builder = (sequence, lower_index, upper_index) => {
+    if(lower_index === upper_index) {
+            let node = $('<li></li>').text(sequence.join(', ')).addClass('text-center list-group-item')
+            $('#seq-table').append(node);
+    } else
+        for (let i = lower_index; i <= upper_index; i++) {
+            [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
+            sequence_builder(sequence, lower_index + 1, upper_index);
+            [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
+        }
+}
+
 
 $(document).ready(function() {
 
@@ -98,9 +128,9 @@ $(document).ready(function() {
         }
     });
 
+    // CLICK EVENTS FOR TAB PAGES
 
     // FOR TRUTH TABLE PAGE
-    
     /**
      * Click event for truth table generator
      */
@@ -108,7 +138,7 @@ $(document).ready(function() {
         goLove();       // para sa'yo ito hahahaha
     });
 
-    // CLICK EVENTS FOR TAB PAGES
+    
 
     /**
      * Click events for tabs
@@ -138,4 +168,18 @@ $(document).ready(function() {
             $(code_panel[index]).addClass('display-code');
         });
     }
+
+    // FOR EUCLIDEAN ALGORITHM
+    /**
+     * Click event for euclidean algorithm
+     */
+    $('#calc-euc').click(() => {
+        $('#answer').val(euclidean(Number($('#value-a').val()), Number($('#value-b').val())));
+    });
+
+    $('#str-generate').click(() => {
+        $('#seq-table').empty()
+        let sequence = $('#str-sec').val().split('');
+        sequence_builder(sequence, 0, sequence.length-1);
+    });
 }); 

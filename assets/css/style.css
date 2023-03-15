@@ -6,6 +6,7 @@
 
 body {
   height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body header .nav-container {
@@ -205,7 +206,7 @@ main .program-container .euc-inputs label {
 }
 main .program-container .euc-inputs input {
   width: 80%;
-  padding: 0.29rem;
+  padding: 0.2rem;
   margin: 0.3rem 0;
   border: 1px solid #000;
   border-left: none;
@@ -217,8 +218,30 @@ main .program-container .euc-ans {
   width: 50%;
   padding: 1rem 0;
 }
+main .program-container .str-sec-container {
+  width: 80%;
+  margin: 0 auto;
+}
+main .program-container .str-sec-container .str-sec-inp {
+  display: flex;
+}
+main .program-container .str-sec-container .str-sec-inp input {
+  width: 90%;
+  border: 1px solid #000;
+  border-right: none;
+  padding: 0.3rem 0.5rem;
+}
+main .program-container .str-sec-container .str-sec-inp input:focus {
+  outline: none;
+}
+main .program-container .str-sec-container .str-sec-inp button {
+  width: 20%;
+  border: 1px solid #000;
+  border-left: none;
+}
 main .program-container .algo-img {
   width: 100%;
+  border: 1px solid #000;
 }
 
 main .code-section .code-desc {
@@ -382,6 +405,38 @@ main .display-code {
   main .program-container .table {
     font-size: 0.6rem;
   }
+  main .program-container h4 {
+    font-size: 0.8rem;
+  }
+  main .program-container .calc-container button {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  main .program-container .calc-container .inputs-container {
+    width: 100%;
+  }
+  main .program-container .euc-inputs label {
+    font-size: 0.5rem !important;
+    padding: 0.37rem 0;
+    width: 30%;
+  }
+  main .program-container .euc-inputs input {
+    padding: 0 0.3rem;
+  }
+  main .program-container .str-sec-container {
+    width: 100%;
+  }
+  main .program-container .str-sec-container .str-sec-inp input {
+    font-size: 0.8rem;
+    padding: 0 0.3rem;
+  }
+  main .program-container .str-sec-container .str-sec-inp button {
+    width: 30%;
+    font-size: 0.6rem;
+  }
+  main .program-container .list-group {
+    font-size: 0.6rem !important;
+  }
   footer {
     padding: 0 !important;
   }
@@ -478,6 +533,24 @@ main .display-code {
   main .program-container .table {
     font-size: 0.6rem;
   }
+  main .program-container h4 {
+    font-size: 0.8rem;
+  }
+  main .program-container .calc-container button {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  main .program-container .calc-container .inputs-container {
+    width: 100%;
+  }
+  main .program-container .euc-inputs label {
+    font-size: 0.5rem !important;
+    padding: 0.37rem 0;
+    width: 30%;
+  }
+  main .program-container .euc-inputs input {
+    padding: 0 0.3rem;
+  }
   footer {
     padding: 0 !important;
   }
@@ -568,6 +641,24 @@ main .display-code {
   main .program-container .table {
     font-size: 0.6rem;
   }
+  main .program-container h4 {
+    font-size: 0.8rem;
+  }
+  main .program-container .calc-container button {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  main .program-container .calc-container .inputs-container {
+    width: 100%;
+  }
+  main .program-container .euc-inputs label {
+    font-size: 0.5rem !important;
+    padding: 0.37rem 0;
+    width: 30%;
+  }
+  main .program-container .euc-inputs input {
+    padding: 0 0.3rem;
+  }
   footer {
     padding: 0 !important;
   }
@@ -657,6 +748,24 @@ main .display-code {
   }
   main .program-container .table {
     font-size: 0.6rem;
+  }
+  main .program-container h4 {
+    font-size: 0.8rem;
+  }
+  main .program-container .calc-container button {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  main .program-container .calc-container .inputs-container {
+    width: 100%;
+  }
+  main .program-container .euc-inputs label {
+    font-size: 0.5rem !important;
+    padding: 0.37rem 0;
+    width: 30%;
+  }
+  main .program-container .euc-inputs input {
+    padding: 0 0.3rem;
   }
   footer {
     padding: 0 !important;

@@ -7,6 +7,7 @@
 
 body {
     height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     // overflow-x: hidden;
 }
 
@@ -123,6 +124,8 @@ body main {
         background: $primary-light;
         border-radius: 50%;
     }
+
+
 
     // Website Description
     // .desc-container {
@@ -263,7 +266,7 @@ main .program-container {
 
     .euc-inputs input {
         width: 80%;
-        padding: .29rem;
+        padding: .2rem;
         margin: .3rem 0;
         border: 1px solid $dark-color;
         border-left: none;
@@ -277,8 +280,36 @@ main .program-container {
         padding: 1rem 0;
     }
 
+    // String and sequence page
+    .str-sec-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .str-sec-container .str-sec-inp {
+        display: flex;
+
+    }
+
+    .str-sec-container .str-sec-inp input{
+        width: 90%;
+        border: 1px solid #000;
+        border-right: none;
+        padding: .3rem .5rem;
+        &:focus {
+            outline: none;
+        }
+    }
+    .str-sec-container .str-sec-inp button {
+        width: 20%;
+        border: 1px solid #000;
+        border-left: none;
+    }
+    
+
     .algo-img {
         width: 100%;
+        border: 1px solid #000;
     }
 }
 

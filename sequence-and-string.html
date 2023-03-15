@@ -34,9 +34,17 @@
                 <h1 class="topic-title">Euclidean Algorithm</h1>
                 <p>— In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. The factorial of n also equals the product of n with the next smaller factorial: For example, The value of 0! is 1, according to the convention for an empty product.</p>
             </div>
-            <!-- <div class="program-container">
-                
-            </div> -->
+            <div class="program-container">
+                <div class="str-sec-container">
+                    <div class="str-sec-inp">
+                        <input type="text" id="str-sec" placeholder="Enter a string">
+                        <button class="bg-primary text-white" id="str-generate">GENERATE</button>
+                    </div>
+                    <ul class="list-group my-2" id="seq-table">
+                        
+                    </ul>
+                </div>
+            </div>
             <div class="code-section">
                 <div class="code-desc">
                     <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement factorial program in other programming languages.</span>
@@ -58,7 +66,7 @@
 <span class="line">2</span>        if(lower_index === upper_index)
 <span class="line">3</span>            console.log(sequence.join())
 <span class="line">4</span>        else
-<span class="line">5</span>            for (let i = 0; i <= upper_index; i++) {
+<span class="line">5</span>            for (let i = lower_index; i <= upper_index; i++) {
 <span class="line">6</span>                [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
 <span class="line">7</span>                permute(sequence, lower_index + 1, upper_index);
 <span class="line">8</span>                [sequence[i], sequence[lower_index]] =  [sequence[lower_index], sequence[i]];
@@ -270,7 +278,7 @@
                 <div class="bottomf-container">
                     <hr/>
                     <div class="b-c">
-                        <span>© 2023 Copyright: <a href="#" style="text-decoration:none;">Discrete Mathematics</a></span>
+                        <span>For educational purpose only.</span>
                         <section>
                             <a class="btn btn-outline-dark" href="#!" role="button">
                                 <i class="fab fa-facebook-f"></i>
