@@ -65,47 +65,47 @@
                         <code>
 <pre>
 <span class="line">1</span>    function generateSquare(n)
-<span class="line">1</span>    {
-<span class="line">1</span>        magicSquare = Array(n).fill(0).map(x => Array(n).fill(0));
-<span class="line">1</span>
-<span class="line">1</span>        let i = parseInt(n / 2);
-<span class="line">1</span>        let j = n - 1;
-<span class="line">1</span>        
-<span class="line">1</span>        for (num = 1; num <= n * n;) {
-<span class="line">1</span>            if (i == -1 && j == n)
-<span class="line">1</span>            {
-<span class="line">1</span>                j = n - 2;
-<span class="line">1</span>                i = 0;
-<span class="line">1</span>            }
-<span class="line">1</span>            else {
-<span class="line">1</span>                if (j == n)
-<span class="line">1</span>                    j = 0;
-<span class="line">1</span>                    
-<span class="line">1</span>                if (i < 0)
-<span class="line">1</span>                    i = n - 1;
-<span class="line">1</span>            }
-<span class="line">1</span>     
-<span class="line">1</span>            if (magicSquare[i][j] != 0) {
-<span class="line">1</span>                j -= 2;
-<span class="line">1</span>                i++;
-<span class="line">1</span>                continue;
-<span class="line">1</span>            }
-<span class="line">1</span>            else
-<span class="line">1</span>                magicSquare[i][j] = num++;
-<span class="line">1</span>            j++;
-<span class="line">1</span>            i--;
-<span class="line">1</span>        }
-<span class="line">1</span>        
-<span class="line">1</span>        document.write("The Magic Square for " + n + ":&lt;br>");
-<span class="line">1</span>        document.write("Sum of each row or column " + parseInt(n * (n * n + 1) / 2) + ":&lt;br>");
-<span class="line">1</span>        for (i = 0; i < n; i++) {
-<span class="line">1</span>            for (j = 0; j < n; j++)
-<span class="line">1</span>                document.write(magicSquare[i][j] + " ");
-<span class="line">1</span>            document.write("&lt;br>");
-<span class="line">1</span>        }
-<span class="line">1</span>    }
-<span class="line">1</span>    let n = Number(prompt("Enter an odd number: "));
-<span class="line">1</span>    generateSquare(n);
+<span class="line">2</span>    {
+<span class="line">3</span>        magicSquare = Array(n).fill(0).map(x => Array(n).fill(0));
+<span class="line">4</span>
+<span class="line">5</span>        let i = parseInt(n / 2);
+<span class="line">6</span>        let j = n - 1;
+<span class="line">7</span>        
+<span class="line">8</span>        for (num = 1; num <= n * n;) {
+<span class="line">9</span>            if (i == -1 && j == n)
+<span class="line">10</span>            {
+<span class="line">11</span>                j = n - 2;
+<span class="line">12</span>                i = 0;
+<span class="line">13</span>            }
+<span class="line">14</span>            else {
+<span class="line">15</span>                if (j == n)
+<span class="line">16</span>                    j = 0;
+<span class="line">17</span>                    
+<span class="line">18</span>                if (i < 0)
+<span class="line">19</span>                    i = n - 1;
+<span class="line">20</span>            }
+<span class="line">21</span>     
+<span class="line">22</span>            if (magicSquare[i][j] != 0) {
+<span class="line">23</span>                j -= 2;
+<span class="line">24</span>                i++;
+<span class="line">25</span>                continue;
+<span class="line">26</span>            }
+<span class="line">27</span>            else
+<span class="line">28</span>                magicSquare[i][j] = num++;
+<span class="line">29</span>            j++;
+<span class="line">30</span>            i--;
+<span class="line">31</span>        }
+<span class="line">32</span>        
+<span class="line">33</span>        document.write("The Magic Square for " + n + ":&lt;br>");
+<span class="line">34</span>        document.write("Sum of each row or column " + parseInt(n * (n * n + 1) / 2) + ":&lt;br>");
+<span class="line">35</span>        for (i = 0; i < n; i++) {
+<span class="line">36</span>            for (j = 0; j < n; j++)
+<span class="line">37</span>                document.write(magicSquare[i][j] + " ");
+<span class="line">38</span>            document.write("&lt;br>");
+<span class="line">39</span>        }
+<span class="line">40</span>    }
+<span class="line">41</span>    let n = Number(prompt("Enter an odd number: "));
+<span class="line">42</span>    generateSquare(n);
 </pre>
                         </code>
                         <div class="run-container">
@@ -116,24 +116,24 @@
                         <code>
 <pre>
 <span class="line">1</span>    N  = int(input("Enter a number (odd numbers only): "))
-<span class="line">1</span>    magic_square = [[0 for x in range(N)] for y in range(N)]
-<span class="line">1</span>
-<span class="line">1</span>    n = 1
-<span class="line">1</span>    i, j = 0, N//2
-<span class="line">1</span>
-<span class="line">1</span>    while n <= N**2:
-<span class="line">1</span>        magic_square[i][j] = n
-<span class="line">1</span>        n += 1
-<span class="line">1</span>        newi, newj = (i-1) % N, (j+1)% N
-<span class="line">1</span>        if magic_square[newi][newj]:
-<span class="line">1</span>            i += 1
-<span class="line">1</span>        else:
-<span class="line">1</span>            i, j = newi, newj
-<span class="line">1</span>
-<span class="line">1</span>    for i in range(N):
-<span class="line">1</span>        for j in range(N):
-<span class="line">1</span>            print(magic_square[i][j], end="\t")
-<span class="line">1</span>        print()
+<span class="line">2</span>    magic_square = [[0 for x in range(N)] for y in range(N)]
+<span class="line">3</span>
+<span class="line">4</span>    n = 1
+<span class="line">5</span>    i, j = 0, N//2
+<span class="line">6</span>
+<span class="line">7</span>    while n <= N**2:
+<span class="line">8</span>        magic_square[i][j] = n
+<span class="line">9</span>        n += 1
+<span class="line">10</span>        newi, newj = (i-1) % N, (j+1)% N
+<span class="line">11</span>        if magic_square[newi][newj]:
+<span class="line">12</span>            i += 1
+<span class="line">13</span>        else:
+<span class="line">14</span>            i, j = newi, newj
+<span class="line">15</span>
+<span class="line">16</span>    for i in range(N):
+<span class="line">17</span>        for j in range(N):
+<span class="line">18</span>            print(magic_square[i][j], end="\t")
+<span class="line">19</span>        print()
 </pre>
                         </code>
                         <div class="run-container">
@@ -144,56 +144,56 @@
                         <code>
 <pre>
 <span class="line">1</span>    import java.io.*;
-<span class="line">1</span> 
-<span class="line">1</span>    class Main {
-<span class="line">1</span>        static void generateSquare(int n)
-<span class="line">1</span>        {
-<span class="line">1</span>            int[][] magicSquare = new int[n][n];
-<span class="line">1</span>    
-<span class="line">1</span>            int i = n / 2;
-<span class="line">1</span>            int j = n - 1;
-<span class="line">1</span>    
-<span class="line">1</span>            for (int num = 1; num <= n * n;) {
-<span class="line">1</span>                if (i == -1 && j == n)
-<span class="line">1</span>                {
-<span class="line">1</span>                    j = n - 2;
-<span class="line">1</span>                    i = 0;
-<span class="line">1</span>                }
-<span class="line">1</span>                else {
-<span class="line">1</span>                    if (j == n)
-<span class="line">1</span>                        j = 0;
-<span class="line">1</span>                    if (i < 0)
-<span class="line">1</span>                        i = n - 1;
-<span class="line">1</span>                }
-<span class="line">1</span>    
-<span class="line">1</span>                if (magicSquare[i][j] != 0) {
-<span class="line">1</span>                    j -= 2;
-<span class="line">1</span>                    i++;
-<span class="line">1</span>                    continue;
-<span class="line">1</span>                }
-<span class="line">1</span>                else
-<span class="line">1</span>                    magicSquare[i][j] = num++;
-<span class="line">1</span>    
-<span class="line">1</span>                j++;
-<span class="line">1</span>                i--;
-<span class="line">1</span>            }
-<span class="line">1</span>    
-<span class="line">1</span>            System.out.println("The Magic Square for " + n + ":");
-<span class="line">1</span>            System.out.println("Sum of each row or column " + n * (n * n + 1) / 2 + ":");
-<span class="line">1</span>            for (i = 0; i < n; i++) {
-<span class="line">1</span>                for (j = 0; j < n; j++)
-<span class="line">1</span>                    System.out.print(magicSquare[i][j] + " ");
-<span class="line">1</span>                System.out.println();
-<span class="line">1</span>            }
-<span class="line">1</span>        }
-<span class="line">1</span>
-<span class="line">1</span>        public static void main(String[] args)
-<span class="line">1</span>        {
-<span class="line">1</span>            System.out.print("Enter an odd number: ");
-<span class="line">1</span>            int n = new java.util.Scanner(System.in).nextInt();
-<span class="line">1</span>            generateSquare(n);
-<span class="line">1</span>        }
-<span class="line">1</span>    }
+<span class="line">2</span> 
+<span class="line">3</span>    class Main {
+<span class="line">4</span>        static void generateSquare(int n)
+<span class="line">5</span>        {
+<span class="line">6</span>            int[][] magicSquare = new int[n][n];
+<span class="line">7</span>    
+<span class="line">8</span>            int i = n / 2;
+<span class="line">9</span>            int j = n - 1;
+<span class="line">10</span>    
+<span class="line">11</span>            for (int num = 1; num <= n * n;) {
+<span class="line">12</span>                if (i == -1 && j == n)
+<span class="line">13</span>                {
+<span class="line">14</span>                    j = n - 2;
+<span class="line">15</span>                    i = 0;
+<span class="line">16</span>                }
+<span class="line">17</span>                else {
+<span class="line">18</span>                    if (j == n)
+<span class="line">19</span>                        j = 0;
+<span class="line">20</span>                    if (i < 0)
+<span class="line">21</span>                        i = n - 1;
+<span class="line">22</span>                }
+<span class="line">23</span>    
+<span class="line">24</span>                if (magicSquare[i][j] != 0) {
+<span class="line">25</span>                    j -= 2;
+<span class="line">26</span>                    i++;
+<span class="line">27</span>                    continue;
+<span class="line">28</span>                }
+<span class="line">29</span>                else
+<span class="line">30</span>                    magicSquare[i][j] = num++;
+<span class="line">31</span>    
+<span class="line">32</span>                j++;
+<span class="line">33</span>                i--;
+<span class="line">34</span>            }
+<span class="line">35</span>    
+<span class="line">36</span>            System.out.println("The Magic Square for " + n + ":");
+<span class="line">37</span>            System.out.println("Sum of each row or column " + n * (n * n + 1) / 2 + ":");
+<span class="line">38</span>            for (i = 0; i < n; i++) {
+<span class="line">39</span>                for (j = 0; j < n; j++)
+<span class="line">40</span>                    System.out.print(magicSquare[i][j] + " ");
+<span class="line">41</span>                System.out.println();
+<span class="line">42</span>            }
+<span class="line">43</span>        }
+<span class="line">44</span>
+<span class="line">45</span>        public static void main(String[] args)
+<span class="line">46</span>        {
+<span class="line">47</span>            System.out.print("Enter an odd number: ");
+<span class="line">48</span>            int n = new java.util.Scanner(System.in).nextInt();
+<span class="line">49</span>            generateSquare(n);
+<span class="line">50</span>        }
+<span class="line">51</span>    }
 </pre>
                         </code>
                         <div class="run-container">
@@ -204,59 +204,59 @@
                         <code>
 <pre>
 <span class="line">1</span>    #include &lt;stdio.h>
-<span class="line">1</span>    #include &lt;string.h>
-<span class="line">1</span>        
-<span class="line">1</span>    void generateSquare(int n)
-<span class="line">1</span>    {
-<span class="line">1</span>        int magicSquare[n][n];
-<span class="line">1</span>        memset(magicSquare, 0, sizeof(magicSquare));
-<span class="line">1</span>            
-<span class="line">1</span>        int i = n / 2;
-<span class="line">1</span>        int j = n - 1;
-<span class="line">1</span>        
-<span class="line">1</span>        for (int num = 1; num <= n * n;) {
-<span class="line">1</span>            if (i == -1 && j == n)
-<span class="line">1</span>            {
-<span class="line">1</span>                j = n - 2;
-<span class="line">1</span>                i = 0;
-<span class="line">1</span>            }
-<span class="line">1</span>            else {
-<span class="line">1</span>                if (j == n)
-<span class="line">1</span>                    j = 0;
-<span class="line">1</span>    
-<span class="line">1</span>                if (i < 0)
-<span class="line">1</span>                    i = n - 1;
-<span class="line">1</span>            }
-<span class="line">1</span>            if (magicSquare[i][j])
-<span class="line">1</span>            {
-<span class="line">1</span>                j -= 2;
-<span class="line">1</span>                i++;
-<span class="line">1</span>                continue;
-<span class="line">1</span>            }
-<span class="line">1</span>            else
-<span class="line">1</span>                magicSquare[i][j] = num++;        
-<span class="line">1</span>            j++;
-<span class="line">1</span>            i--;
-<span class="line">1</span>        }
-<span class="line">1</span>    
-<span class="line">1</span>        printf("The Magic Square for n=%d:\nSum of "
-<span class="line">1</span>                "each row or column %d:\n\n",
-<span class="line">1</span>                n, n * (n * n + 1) / 2);
-<span class="line">1</span>        for (i = 0; i < n; i++) {
-<span class="line">1</span>            for (j = 0; j < n; j++)
-<span class="line">1</span>                printf("%3d ", magicSquare[i][j]);
-<span class="line">1</span>            printf("\n");
-<span class="line">1</span>        }
-<span class="line">1</span>    }
-<span class="line">1</span>    
-<span class="line">1</span>    int main()
-<span class="line">1</span>    {
-<span class="line">1</span>        int n;
-<span class="line">1</span>        printf("Enter an odd number: ");
-<span class="line">1</span>        scanf(" %d", &n);
-<span class="line">1</span>        generateSquare(n);
-<span class="line">1</span>        return 0;
-<span class="line">1</span>    }
+<span class="line">2</span>    #include &lt;string.h>
+<span class="line">3</span>        
+<span class="line">4</span>    void generateSquare(int n)
+<span class="line">5</span>    {
+<span class="line">6</span>        int magicSquare[n][n];
+<span class="line">7</span>        memset(magicSquare, 0, sizeof(magicSquare));
+<span class="line">8</span>            
+<span class="line">9</span>        int i = n / 2;
+<span class="line">10</span>        int j = n - 1;
+<span class="line">11</span>        
+<span class="line">12</span>        for (int num = 1; num <= n * n;) {
+<span class="line">13</span>            if (i == -1 && j == n)
+<span class="line">14</span>            {
+<span class="line">15</span>                j = n - 2;
+<span class="line">16</span>                i = 0;
+<span class="line">17</span>            }
+<span class="line">18</span>            else {
+<span class="line">19</span>                if (j == n)
+<span class="line">20</span>                    j = 0;
+<span class="line">21</span>    
+<span class="line">22</span>                if (i < 0)
+<span class="line">23</span>                    i = n - 1;
+<span class="line">24</span>            }
+<span class="line">25</span>            if (magicSquare[i][j])
+<span class="line">26</span>            {
+<span class="line">27</span>                j -= 2;
+<span class="line">28</span>                i++;
+<span class="line">29</span>                continue;
+<span class="line">30</span>            }
+<span class="line">31</span>            else
+<span class="line">32</span>                magicSquare[i][j] = num++;        
+<span class="line">33</span>            j++;
+<span class="line">34</span>            i--;
+<span class="line">35</span>        }
+<span class="line">36</span>    
+<span class="line">37</span>        printf("The Magic Square for n=%d:\nSum of "
+<span class="line">38</span>                "each row or column %d:\n\n",
+<span class="line">39</span>                n, n * (n * n + 1) / 2);
+<span class="line">40</span>        for (i = 0; i < n; i++) {
+<span class="line">41</span>            for (j = 0; j < n; j++)
+<span class="line">42</span>                printf("%3d ", magicSquare[i][j]);
+<span class="line">43</span>            printf("\n");
+<span class="line">44</span>        }
+<span class="line">45</span>    }
+<span class="line">46</span>    
+<span class="line">47</span>    int main()
+<span class="line">48</span>    {
+<span class="line">49</span>        int n;
+<span class="line">50</span>        printf("Enter an odd number: ");
+<span class="line">51</span>        scanf(" %d", &n);
+<span class="line">52</span>        generateSquare(n);
+<span class="line">53</span>        return 0;
+<span class="line">54</span>    }
 </pre>
                         </code>
                         <div class="run-container">
@@ -267,61 +267,61 @@
                         <code>
 <pre>
 <span class="line">1</span>    #include &lt;bits/stdc++.h>
-<span class="line">1</span>    using namespace std;
-<span class="line">1</span>     
-<span class="line">1</span>    void generateSquare(int n)
-<span class="line">1</span>    {
-<span class="line">1</span>        int magicSquare[n][n];
-<span class="line">1</span>     
-<span class="line">1</span>        memset(magicSquare, 0, sizeof(magicSquare));
-<span class="line">1</span>        int i = n / 2;
-<span class="line">1</span>        int j = n - 1;
-<span class="line">1</span>     
-<span class="line">1</span>        for (int num = 1; num <= n * n;) {
-<span class="line">1</span>            if (i == -1 && j == n)
-<span class="line">1</span>            {
-<span class="line">1</span>                j = n - 2;
-<span class="line">1</span>                i = 0;
-<span class="line">1</span>            }
-<span class="line">1</span>            else {
-<span class="line">1</span>    
-<span class="line">1</span>                if (j == n)
-<span class="line">1</span>                    j = 0;
-<span class="line">1</span>                if (i < 0)
-<span class="line">1</span>                    i = n - 1;
-<span class="line">1</span>            }
-<span class="line">1</span>            if (magicSquare[i][j])
-<span class="line">1</span>            {
-<span class="line">1</span>                j -= 2;
-<span class="line">1</span>                i++;
-<span class="line">1</span>                continue;
-<span class="line">1</span>            }
-<span class="line">1</span>            else
-<span class="line">1</span>                magicSquare[i][j] = num++;
-<span class="line">1</span>     
-<span class="line">1</span>            j++;
-<span class="line">1</span>            i--;
-<span class="line">1</span>        }
-<span class="line">1</span>     
-<span class="line">1</span>        cout << "The Magic Square for n=" << n
-<span class="line">1</span>             << ":\nSum of "
-<span class="line">1</span>                "each row or column "
-<span class="line">1</span>             << n * (n * n + 1) / 2 << ":\n\n";
-<span class="line">1</span>        for (i = 0; i < n; i++) {
-<span class="line">1</span>            for (j = 0; j < n; j++)
-<span class="line">1</span>                cout << setw(4) << magicSquare[i][j] << " ";
-<span class="line">1</span>            cout << endl;
-<span class="line">1</span>        }
-<span class="line">1</span>    }
-<span class="line">1</span>     
-<span class="line">1</span>    int main()
-<span class="line">1</span>    {
-<span class="line">1</span>        int n;
-<span class="line">1</span>        cout << "Enter an odd number: ";
-<span class="line">1</span>        cin >> n;
-<span class="line">1</span>        generateSquare(n);
-<span class="line">1</span>        return 0;
-<span class="line">1</span>    }     
+<span class="line">2</span>    using namespace std;
+<span class="line">3</span>     
+<span class="line">4</span>    void generateSquare(int n)
+<span class="line">5</span>    {
+<span class="line">6</span>        int magicSquare[n][n];
+<span class="line">7</span>     
+<span class="line">8</span>        memset(magicSquare, 0, sizeof(magicSquare));
+<span class="line">9</span>        int i = n / 2;
+<span class="line">10</span>        int j = n - 1;
+<span class="line">11</span>     
+<span class="line">12</span>        for (int num = 1; num <= n * n;) {
+<span class="line">13</span>            if (i == -1 && j == n)
+<span class="line">14</span>            {
+<span class="line">15</span>                j = n - 2;
+<span class="line">16</span>                i = 0;
+<span class="line">17</span>            }
+<span class="line">18</span>            else {
+<span class="line">19</span>    
+<span class="line">20</span>                if (j == n)
+<span class="line">21</span>                    j = 0;
+<span class="line">22</span>                if (i < 0)
+<span class="line">23</span>                    i = n - 1;
+<span class="line">24</span>            }
+<span class="line">25</span>            if (magicSquare[i][j])
+<span class="line">26</span>            {
+<span class="line">27</span>                j -= 2;
+<span class="line">28</span>                i++;
+<span class="line">29</span>                continue;
+<span class="line">30</span>            }
+<span class="line">31</span>            else
+<span class="line">32</span>                magicSquare[i][j] = num++;
+<span class="line">33</span>     
+<span class="line">34</span>            j++;
+<span class="line">35</span>            i--;
+<span class="line">36</span>        }
+<span class="line">37</span>     
+<span class="line">38</span>        cout << "The Magic Square for n=" << n
+<span class="line">39</span>             << ":\nSum of "
+<span class="line">40</span>                "each row or column "
+<span class="line">41</span>             << n * (n * n + 1) / 2 << ":\n\n";
+<span class="line">42</span>        for (i = 0; i < n; i++) {
+<span class="line">43</span>            for (j = 0; j < n; j++)
+<span class="line">44</span>                cout << setw(4) << magicSquare[i][j] << " ";
+<span class="line">45</span>            cout << endl;
+<span class="line">46</span>        }
+<span class="line">47</span>    }
+<span class="line">48</span>     
+<span class="line">49</span>    int main()
+<span class="line">50</span>    {
+<span class="line">51</span>        int n;
+<span class="line">52</span>        cout << "Enter an odd number: ";
+<span class="line">53</span>        cin >> n;
+<span class="line">54</span>        generateSquare(n);
+<span class="line">55</span>        return 0;
+<span class="line">56</span>    }     
 </pre>
                         </code>
                         <div class="run-container">
@@ -332,59 +332,59 @@
                         <code>
 <pre>
 <span class="line">1</span>    &lt;?php
-<span class="line">1</span>        function generateSquare($n)
-<span class="line">1</span>        {
-<span class="line">1</span>            $magicSquare;
-<span class="line">1</span>            for ($i = 0; $i < $n; $i++)
-<span class="line">1</span>                for ($j = 0; $j < $n; $j++)
-<span class="line">1</span>                    $magicSquare[$i][$j] = 0;
-<span class="line">1</span>            $i = (int)$n / 2;
-<span class="line">1</span>            $j = $n - 1;
-<span class="line">1</span>        
-<span class="line">1</span>            for ($num = 1; $num <= $n * $n; )
-<span class="line">1</span>            {
-<span class="line">1</span>                
-<span class="line">1</span>                if ($i == -1 && $j == $n)
-<span class="line">1</span>                {
-<span class="line">1</span>                    $j = $n-2;
-<span class="line">1</span>                    $i = 0;
-<span class="line">1</span>                }
-<span class="line">1</span>                else
-<span class="line">1</span>                {
-<span class="line">1</span>                    if ($j == $n)
-<span class="line">1</span>                        $j = 0;
-<span class="line">1</span>                    if ($i < 0)
-<span class="line">1</span>                        $i = $n-1;
-<span class="line">1</span>                }
-<span class="line">1</span>                if ($magicSquare[$i][$j])
-<span class="line">1</span>                {
-<span class="line">1</span>                    $j -= 2;
-<span class="line">1</span>                    $i++;
-<span class="line">1</span>                    continue;
-<span class="line">1</span>                }
-<span class="line">1</span>                else
-<span class="line">1</span>                
-<span class="line">1</span>                    $magicSquare[$i][$j] = $num++;
-<span class="line">1</span>        
-<span class="line">1</span>                $j++; $i--;
-<span class="line">1</span>            }
-<span class="line">1</span>        
-<span class="line">1</span>            echo "The Magic Square for n = " . $n
-<span class="line">1</span>                . ":\nSum of each row or column "
-<span class="line">1</span>                . $n * ($n * $n + 1) / 2;
-<span class="line">1</span>                
-<span class="line">1</span>            echo "\n\n";
-<span class="line">1</span>            for ($i = 0; $i < $n; $i++)
-<span class="line">1</span>            {
-<span class="line">1</span>                for ($j = 0; $j < $n; $j++)
-<span class="line">1</span>                    echo $magicSquare[$i][$j] . " ";
-<span class="line">1</span>                echo "\n";
-<span class="line">1</span>            }
-<span class="line">1</span>        }
-<span class="line">1</span>        
-<span class="line">1</span>        $n = (int)readline("Enter an odd number: ");
-<span class="line">1</span>        generateSquare ($n);
-<span class="line">1</span>    ?>
+<span class="line">2</span>        function generateSquare($n)
+<span class="line">3</span>        {
+<span class="line">4</span>            $magicSquare;
+<span class="line">5</span>            for ($i = 0; $i < $n; $i++)
+<span class="line">6</span>                for ($j = 0; $j < $n; $j++)
+<span class="line">7</span>                    $magicSquare[$i][$j] = 0;
+<span class="line">8</span>            $i = (int)$n / 2;
+<span class="line">9</span>            $j = $n - 1;
+<span class="line">10</span>        
+<span class="line">11</span>            for ($num = 1; $num <= $n * $n; )
+<span class="line">12</span>            {
+<span class="line">13</span>                
+<span class="line">14</span>                if ($i == -1 && $j == $n)
+<span class="line">15</span>                {
+<span class="line">16</span>                    $j = $n-2;
+<span class="line">17</span>                    $i = 0;
+<span class="line">18</span>                }
+<span class="line">19</span>                else
+<span class="line">20</span>                {
+<span class="line">21</span>                    if ($j == $n)
+<span class="line">22</span>                        $j = 0;
+<span class="line">23</span>                    if ($i < 0)
+<span class="line">24</span>                        $i = $n-1;
+<span class="line">25</span>                }
+<span class="line">26</span>                if ($magicSquare[$i][$j])
+<span class="line">27</span>                {
+<span class="line">28</span>                    $j -= 2;
+<span class="line">29</span>                    $i++;
+<span class="line">30</span>                    continue;
+<span class="line">31</span>                }
+<span class="line">32</span>                else
+<span class="line">33</span>                
+<span class="line">34</span>                    $magicSquare[$i][$j] = $num++;
+<span class="line">35</span>        
+<span class="line">36</span>                $j++; $i--;
+<span class="line">37</span>            }
+<span class="line">38</span>        
+<span class="line">39</span>            echo "The Magic Square for n = " . $n
+<span class="line">40</span>                . ":\nSum of each row or column "
+<span class="line">41</span>                . $n * ($n * $n + 1) / 2;
+<span class="line">42</span>                
+<span class="line">43</span>            echo "\n\n";
+<span class="line">44</span>            for ($i = 0; $i < $n; $i++)
+<span class="line">45</span>            {
+<span class="line">46</span>                for ($j = 0; $j < $n; $j++)
+<span class="line">47</span>                    echo $magicSquare[$i][$j] . " ";
+<span class="line">48</span>                echo "\n";
+<span class="line">49</span>            }
+<span class="line">50</span>        }
+<span class="line">51</span>        
+<span class="line">52</span>        $n = (int)readline("Enter an odd number: ");
+<span class="line">53</span>        generateSquare ($n);
+<span class="line">54</span>    ?>
 </pre>
                         </code>
                         <div class="run-container">
