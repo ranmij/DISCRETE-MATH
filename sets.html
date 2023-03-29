@@ -31,31 +31,78 @@
         </header>
         <main>
             <div class="topic-description">
-                <h1 class="topic-title">Euclidean Algorithm</h1>
-                <p>— In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. The factorial of n also equals the product of n with the next smaller factorial: For example, The value of 0! is 1, according to the convention for an empty product.</p>
+                <h1 class="topic-title">SETS</h1>
+                <p>— A set is the mathematical model for a collection of different things; a set contains elements or members, which can be mathematical objects of any kind: numbers, symbols, points in space, lines, other geometrical shapes, variables, or even other sets.</p>
             </div>
-            <!-- <div class="program-container">
-                
-            </div> -->
+            <div class="program-container">
+                <div class="exp-container">
+                    <h5>UNION OF SET</h5>
+                    <p>The union of two sets is a set containing all elements that are in A
+                        or in B
+                        (possibly both). For example, {1,2}∪{2,3}={1,2,3}
+                       . Thus, we can write x∈(A∪B)
+                        if and only if (x∈A)
+                        or (x∈B)
+                       . Note that A∪B=B∪A
+                       . The union of sets A
+                        and B
+                        is shown by the shaded area in the Venn diagram.</p>
+                    <div>
+                        <img src="assets/img/union_b.png" alt="">
+                    </div>
+                </div>
+                <div class="exp-container">
+                    <h5>DIFFERENCE OF SET</h5>
+                    <p>The difference (subtraction) is defined as follows. The set A−B
+                        consists of elements that are in A
+                        but not in B
+                       . For example if A={1,2,3}
+                        and B={3,5}
+                       , then A−B={1,2}
+                       . A−B
+                        is shown by the shaded area using a Venn diagram. Note that A−B=A∩Bc
+                       .</p>
+                    <div>
+                        <img src="assets/img/difference_b.png" alt="">
+                    </div>
+                </div>
+                <div class="exp-container">
+                    <h5>INTERSECTION OF SET</h5>
+                    <p>The intersection of two sets A
+                        and B
+                       , denoted by A∩B
+                       , consists of all elements that are both in A
+                        and−−−
+                        B
+                       . For example, {1,2}∩{2,3}={2}
+                       . The intersection of sets A
+                        and B
+                        is shown by the shaded area using a Venn diagram.</p>
+                    <div>
+                        <img src="assets/img/intersection_b.png" alt="">
+                    </div>
+                </div>
+            </div>
             <div class="code-section">
                 <div class="code-desc">
                     <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement factorial program in other programming languages.</span>
                 </div>
                 <ul id="language-tab">
-                    <li class="active">JavaScript</li>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>PHP</li>
+                    <li class="active">Python</li>
                 </ul>
-                
                 <div id="code-tab">
                     <div class="code-content display-code">
                         <code>
+<pre>
+<span class="line">1</span>    set_a = {'a', 'b', 'c'}
+<span class="line">2</span>    set_b = {'b', 'c', 'd', 'e'}
+<span class="line">3</span>    print('Union of set A and B: ', set_a.union(set_b))
+<span class="line">4</span>    print('Intersection of set A and B:', set_a.intersection(set_b))
+<span class="line">5</span>    print('Difference of set A and B:', set_a.difference(set_b))
+</pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/46nNIGltb"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/nXji1Z1db"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +111,7 @@
                         <li class="active">Output</li>
                     </ul>
                     <div class="output-content">
-                        <img src="assets/img/factorial-output.png" alt="truth-table-output">
+                        <img src="assets/img/set.png" alt="set-output">
                     </div>
                 </div>
             </div>

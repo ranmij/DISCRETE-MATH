@@ -316,6 +316,17 @@ main .program-container {
     .algo-img {
         width: 100%;
     }
+    
+    .exp-container {
+        padding: 1rem 0;
+    }
+
+    .exp-container div {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        margin: 0 auto;
+    }
 }
 
 .faq-container {

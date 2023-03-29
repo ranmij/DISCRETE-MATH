@@ -245,6 +245,15 @@ main .program-container .str-sec-container .str-sec-inp button, main .program-co
 main .program-container .algo-img {
   width: 100%;
 }
+main .program-container .exp-container {
+  padding: 1rem 0;
+}
+main .program-container .exp-container div {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
 
 .faq-container h1 {
   font-weight: 400;

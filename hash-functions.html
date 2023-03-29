@@ -31,31 +31,49 @@
         </header>
         <main>
             <div class="topic-description">
-                <h1 class="topic-title">Euclidean Algorithm</h1>
-                <p>— In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. The factorial of n also equals the product of n with the next smaller factorial: For example, The value of 0! is 1, according to the convention for an empty product.</p>
+                <h1 class="topic-title">Hash Functions</h1>
+                <p>— In computing, a hash table, also known as hash map, is a data structure that implements an associative array or dictionary. It is an abstract data type that maps keys to values.</p>
             </div>
-            <!-- <div class="program-container">
-                
-            </div> -->
+            <div class="program-container">
+                <div class="exp-container">
+                    <p>Hash functions and their associated hash tables are used in data storage and retrieval applications to access data in a small and nearly constant time per retrieval. They require an amount of storage space only fractionally greater than the total space required for the data or records themselves. Hashing is a computationally and storage space-efficient form of data access that avoids the non-constant access time of ordered and unordered lists and structured trees, and the often exponential storage requirements of direct access of state spaces of large or variable-length keys.</p>
+                    <div>
+                        <img src="assets/img/hash_f_t.png" alt="">
+                    </div>
+                </div>
+            </div>
             <div class="code-section">
                 <div class="code-desc">
                     <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement factorial program in other programming languages.</span>
                 </div>
                 <ul id="language-tab">
-                    <li class="active">JavaScript</li>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>PHP</li>
+                    <li class="active">Python</li>
                 </ul>
                 
                 <div id="code-tab">
                     <div class="code-content display-code">
                         <code>
+<pre>
+<span class="line">1</span>    from random import randint as rint
+<span class="line">2</span>    hash_table = {
+<span class="line">3</span>        'John Smith' : '521-1234',
+<span class="line">4</span>        'Lisa Smith' : '512-8976',
+<span class="line">5</span>        'Sam Doe'    : '512-5030',
+<span class="line">6</span>        'Sandra Dee' : '512-9655',
+<span class="line">7</span>        'Ted Baker'  : '418-4165'
+<span class="line">8</span>    }
+<span class="line">9</span>    
+<span class="line">10</span>   print('Accessing the data in the hash table.')
+<span class="line">11</span>   for key, value in hash_table.items():
+<span class="line">12</span>       print(f"KEY: {key}\tVALUE: {value}")
+<span class="line">13</span>   print()
+<span class="line">14</span>   print("Accessing random key in the hash table.")
+<span class="line">15</span>   rand_key = list(hash_table.keys())[rint(0, len(hash_table))]
+<span class="line">16</span>   print(f"KEY: {rand_key}\tVALUE: {hash_table[rand_key]}")
+</pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/46nNIGltb"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/_Mutqz_MM3"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +82,7 @@
                         <li class="active">Output</li>
                     </ul>
                     <div class="output-content">
-                        <img src="assets/img/factorial-output.png" alt="truth-table-output">
+                        <img src="assets/img/hash-f.png" alt="truth-table-output">
                     </div>
                 </div>
             </div>
