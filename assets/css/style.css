@@ -461,6 +461,15 @@ main .display-code {
   main .program-container .list-group {
     font-size: 0.6rem !important;
   }
+  .exp-container h5 {
+    font-size: 0.8rem;
+  }
+  .exp-container p {
+    font-size: 0.6rem;
+  }
+  .exp-container div img {
+    width: 100%;
+  }
   footer {
     padding: 0 !important;
   }
@@ -518,6 +527,12 @@ main .display-code {
   }
   body main .desc-container p {
     font-size: 0.6rem;
+  }
+  .exp-container {
+    font-size: 0.8rem;
+  }
+  .exp-container div img {
+    width: 100%;
   }
   .faq-container h1 {
     font-size: 0.8em;

@@ -179,6 +179,18 @@
         }
     }
 
+    .exp-container h5 {
+        font-size: .8rem;
+    }
+
+    .exp-container p {
+        font-size: .6rem;
+    }
+
+    .exp-container div img {
+        width: 100%;
+    }
+
     footer {
         padding: 0 !important;
         footer .footer-container {
@@ -255,6 +267,14 @@
         .desc-container p {
             font-size: .6rem;
         }
+    }
+
+    .exp-container {
+        font-size: .8rem;
+    }
+
+    .exp-container div img {
+        width: 100%;
     }
 
     .faq-container  {
