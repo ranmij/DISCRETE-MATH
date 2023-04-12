@@ -464,7 +464,8 @@ main .display-code {
   .exp-container h5 {
     font-size: 0.8rem;
   }
-  .exp-container p {
+  .exp-container p, ul li {
+    background: red;
     font-size: 0.6rem;
   }
   .exp-container div img {
@@ -528,8 +529,11 @@ main .display-code {
   body main .desc-container p {
     font-size: 0.6rem;
   }
-  .exp-container {
+  .exp-container h5 {
     font-size: 0.8rem;
+  }
+  .exp-container p {
+    font-size: 0.6rem;
   }
   .exp-container div img {
     width: 100%;

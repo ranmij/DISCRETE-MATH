@@ -31,23 +31,39 @@
         </header>
         <main>
             <div class="topic-description">
-                <h1 class="topic-title">Euclidean Algorithm</h1>
-                <p>— In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. The factorial of n also equals the product of n with the next smaller factorial: For example, The value of 0! is 1, according to the convention for an empty product.</p>
+                <h1 class="topic-title">Equivalence Relations</h1>
+                <p>— In mathematics, an equivalence relation is a binary relation that is reflexive, symmetric and transitive. The equipollence relation between line segments in geometry is a common example of an equivalence relation. Each equivalence relation provides a partition of the underlying set into disjoint equivalence classes.</p>
             </div>
-            <!-- <div class="program-container">
-                
-            </div> -->
-            <div class="code-section">
+            <div class="program-container">
+                <div class="exp-container">
+                    <h5>Transitive Relation</h5>
+                    <p>A binary relation R on a set A is called transitive if for all a, b, c Є A it holds that if aRb and bRc, then aRc.
+                        This condition must hold for all triples a, b, c in the set. If there exists some triple a, b, c Є A such that (a, b) Є R and (b, c) Є R, but (a, c) # R, then the relation R is not transitive.</p>
+                    <div>
+                        <img src="assets/img/transitive.svg" alt="">
+                    </div>
+                </div>
+                <div class="exp-container">
+                    <h5>Antisymmetric Relation</h5>
+                    <p>A binary relation R on a set A is said to be antisymmetric if there is no pair of distinct elements of A each of which is related by R to the other. So, an antisymmetric relation R can include both ordered pairs (a, b) and (b, a) if and only if a = b.</p>
+                    <div>
+                        <img src="assets/img/antiasymmetric.svg" alt="">
+                    </div>
+                </div>
+                <div class="exp-container">
+                    <h5>Reflexive Relation</h5>
+                    <p>A binary relation R is called reflexive if and only if Va Є A, aRa. So, a relation R is reflexive if it relates every element of A to itself.</p>
+                    <div>
+                        <img src="assets/img/reflexive.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="code-section">
                 <div class="code-desc">
                     <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement factorial program in other programming languages.</span>
                 </div>
                 <ul id="language-tab">
-                    <li class="active">JavaScript</li>
                     <li>Python</li>
-                    <li>Java</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>PHP</li>
                 </ul>
                 
                 <div id="code-tab">
@@ -67,7 +83,7 @@
                         <img src="assets/img/factorial-output.png" alt="truth-table-output">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </main>
         <footer class="bg-light py-5">
             <div class="footer-container">

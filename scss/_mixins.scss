@@ -183,7 +183,8 @@
         font-size: .8rem;
     }
 
-    .exp-container p {
+    .exp-container p, ul li {
+        background: red;
         font-size: .6rem;
     }
 
@@ -269,8 +270,12 @@
         }
     }
 
-    .exp-container {
+    .exp-container h5 {
         font-size: .8rem;
+    }
+
+    .exp-container p {
+        font-size: .6rem;
     }
 
     .exp-container div img {

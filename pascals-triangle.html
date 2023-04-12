@@ -31,31 +31,48 @@
         </header>
         <main>
             <div class="topic-description">
-                <h1 class="topic-title">Euclidean Algorithm</h1>
-                <p>— In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. The factorial of n also equals the product of n with the next smaller factorial: For example, The value of 0! is 1, according to the convention for an empty product.</p>
+                <h1 class="topic-title">Pascal's Triangle</h1>
+                <p>— In mathematics, Pascal's triangle is a triangular array of the binomial coefficients that arises in probability theory, combinatorics, and algebra.</p>
             </div>
-            <!-- <div class="program-container">
-                
-            </div> -->
+            <div class="program-container">
+                <div class="input-container">
+                    <input type="text" placeholder="8, 3" id="pascalinput">
+                    <button id="generatepascal">Generate</button>
+                </div>
+                <div id="pascal-container" style="width: 80%; margin:0 auto;" class="text-center">
+
+                </div>
+            </div>
             <div class="code-section">
                 <div class="code-desc">
-                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement factorial program in other programming languages.</span>
+                    <span class="b-icon"><i class="fa-regular fa-lightbulb"></i> Here's how to implement pascal's triangle program in other programming languages.</span>
                 </div>
                 <ul id="language-tab">
-                    <li class="active">JavaScript</li>
                     <li>Python</li>
-                    <li>Java</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>PHP</li>
                 </ul>
                 
                 <div id="code-tab">
                     <div class="code-content display-code">
                         <code>
+<pre>
+<span class="line">1</span>    # Print Pascal's Triangle in Python
+<span class="line">2</span>    from math import factorial
+<span class="line">3</span>        
+<span class="line">4</span>    # input n
+<span class="line">5</span>    n = 5
+<span class="line">6</span>    for i in range(n):
+<span class="line">7</span>        for j in range(n-i+1):     
+<span class="line">8</span>            # for left spacing
+<span class="line">9</span>            print(end=" ")
+<span class="line">10</span>        
+<span class="line">11</span>       for j in range(i+1):        
+<span class="line">12</span>           # nCr = n!/((n-r)!*r!)
+<span class="line">13</span>           print(factorial(i)//(factorial(j)*factorial(i-j)), end=" ")
+<span class="line">14</span>       print()
+</pre>
                         </code>
                         <div class="run-container">
-                            <a class="bg-primary" href="https://onlinegdb.com/46nNIGltb"><i class="fa-solid fa-play"></i></a>
+                            <a class="bg-primary" href="https://onlinegdb.com/EGwkT3o1f"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +81,7 @@
                         <li class="active">Output</li>
                     </ul>
                     <div class="output-content">
-                        <img src="assets/img/factorial-output.png" alt="truth-table-output">
+                        <img src="assets/img/pascal.png" alt="truth-table-output">
                     </div>
                 </div>
             </div>

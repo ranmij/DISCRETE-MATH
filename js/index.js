@@ -20,9 +20,9 @@ const topics = [
         type : 'Notes'
     },
     {
-        title : 'Matrices Relations',
+        title : 'Matrices',
         desc : 'Sets and relation are interconnected with each other. The relation defines the relation between two given sets. If there are two sets available, then to check if there is any connection between the two sets, we use relations. For example, an empty relation denotes none of the elements in the two sets is same.',
-        link : 'matrices-of-relation.html',
+        link : 'matrices.html',
         type : 'Notes'
     },
     {
@@ -151,6 +151,177 @@ const magic_square = (dimension) => {
         }
 }
 
+function pascal(rows, numToUse, emptyChar, DOMContainer) {
+	var aRows = []
+      , aCols = []
+	  , iR = 0
+	  , iC = 0
+	  , num = numToUse || 1
+	  , ins = null
+	  , empty = emptyChar || null
+	  , columns = rows + (rows - 1)
+	  , startCol = Math.floor(columns / 2)
+	  , topLeft
+	  , topRight
+	;
+
+	// builds rows
+	for (; iR < rows; iR++) {
+		// build columns
+		for (; iC < columns; iC++) {
+
+			// if first row, we need a starting position (middle of table)
+			if (iR === 0) {
+				if (iC === startCol) {
+					ins = num;
+				} else {
+					ins = null;
+				}
+
+			// not first row
+			} else {
+					topLeft = aRows[iR - 1][iC - 1];
+					topRight = aRows[iR - 1][iC + 1];
+
+					// checkered null cell
+					if (topLeft == null && topRight == null) {
+						ins = null;
+					// right side cell with 1-sided value
+					} else if (topLeft == null && topRight != null) {
+						ins = topRight;
+					// left side cell with 1-sided value
+					} else if (topLeft != null && topRight == null) {
+						ins = topLeft;
+					// inside cell with value
+					} else {
+						ins = topLeft + topRight;
+					}
+			}
+			aCols.push(ins);
+		}
+
+		aRows.push(aCols);
+
+		// clear column data for new row
+		aCols = [];
+        iC = 0;
+	}
+
+	iR = 0;
+	iC = 0;
+
+	// loop through again and replace null with prescribed empty char
+	for (; iR < rows; iR++) {
+		for (; iC < columns; iC++) {
+			if (aRows[iR][iC] == null) {
+				aRows[iR][iC] = empty;
+			}
+		}
+		iC = 0;
+	}
+
+	// if a DOM container is passed in use it to constrct an HTML table inside
+	if (DOMContainer) {
+		iR = 0;
+		iC = 0;
+
+		//var container = document.getElementById(DOMContainer);
+
+		var container = document.getElementById(DOMContainer)
+			, tr
+			, td
+			, tdVal
+			, table = _appendChild({
+	            elParent: container,
+	            newTag:   'table',
+	            newElID:  'pascal-table',
+	            attribs: [
+                    { aName: 'border', aVal: '0' },
+                    { aName: 'cellspacing', aVal: '1' },
+                    { aName: 'cellpadding', aVal: '3' }
+                ]
+	        })
+	    ;
+
+		// loop through again and replace null with prescribed empty char
+		for (; iR < rows; iR++) {
+			tr = _appendChild({
+	            elParent: table,
+	            newTag:   'tr',
+	            newElID:  'pascal-tr-' + iR
+	        });
+			for (; iC < columns; iC++) {
+				if (aRows[iR][iC] == empty) {
+					aRows[iR][iC] = '';
+				}
+				td = _appendChild({
+		            elParent: tr,
+		            newTag:   'td',
+		            newElID:  'pascal-td-' + iC,
+		            attribs: [
+	                    { aName: 'align', aVal: 'center' }
+	                ],
+		            sText:    aRows[iR][iC]
+		        });
+			}
+			iC = 0;
+		}
+
+	}
+
+    /**
+     * Append DOM element with its own features to parent element
+     * @param       {object}        args                the arguments object
+     * @property    {DOMElement}    args.elParent       the parent DOM element   
+     * @property    {string}        args.newTag         the new HTML tag to be created  
+     * @property    {string}        args.newElID        the new ID to be applied to the element being created  
+     * @property    {array}         args.newElClasses   the list of classes to be added to the element being created 
+     * @property    {array}         args.attribs        the list of attribute object for name and value to be added to the element being created
+     * @property    {string}        args.sText          the text to be added to the DOM node 
+     * @return      {DOMElement}                        the newly created DOM element 
+     */
+    function _appendChild (args) {
+        var elParent       = args.elParent
+            , newTag       = args.newTag
+            , newElID      = args.newElID
+            , newEl        = document.createElement(newTag)
+            , newElClasses = args.elClasses
+            , newElAttr    = args.attribs || null
+            , i = 0
+        ;
+
+        newEl.id = newElID;
+
+        if (args.sText) {
+            var newContent = document.createTextNode(args.sText);
+            //add the text node to the newly created div.
+            newEl.appendChild(newContent);
+        }
+        if (newElClasses) {
+            newEl.className = newElClasses;
+        }
+
+        // if attribute(s), iterate and add all
+        if (newElAttr) {
+            var newAttr
+                , newElAttrLen = newElAttr.length
+            ;
+
+            for (; i < newElAttrLen; i++) {
+                newAttr = document.createAttribute(newElAttr[i].aName);
+                newAttr.value = newElAttr[i].aVal;
+                newEl.setAttributeNode(newAttr); // set attribute
+            }
+        }
+
+        elParent.appendChild(newEl);
+        
+        return newEl;
+    }
+
+}
+
+
 
 $(document).ready(function() {
 
@@ -234,5 +405,10 @@ $(document).ready(function() {
     $('#magic-generate').click(() => {
         let table_node = $('#magic-table').empty();
         magic_square(Number($('#magic-sqrt').val()));
-    })
+    });
+
+    $('#generatepascal').click(() => {
+        let [a, b] = $('#pascalinput').val().split(', ')
+        pascal(Number(a), Number(b), '|', 'pascal-container');
+    });
 }); 
