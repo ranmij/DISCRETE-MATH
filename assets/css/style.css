@@ -465,11 +465,10 @@ main .display-code {
     font-size: 0.8rem;
   }
   .exp-container p, ul li {
-    background: red;
     font-size: 0.6rem;
   }
   .exp-container div img {
-    width: 100%;
+    width: 200px;
   }
   footer {
     padding: 0 !important;
