@@ -408,7 +408,8 @@ $(document).ready(function() {
     });
 
     $('#generatepascal').click(() => {
-        let [a, b] = $('#pascalinput').val().split(', ')
+        let [a, b] = $('#pascalinput').val().split(', ');
+        $('#pascal-container').empty()
         pascal(Number(a), Number(b), '|', 'pascal-container');
     });
 }); 
